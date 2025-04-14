@@ -28,17 +28,17 @@
             </div>
         </div>
         <div class="col-md-6">
-            <div class="btn-group w-100" role="group" aria-label="Account class filter">
-                <button type="button" class="btn btn-outline-primary" onclick="filterAccountsByClass('all')">All</button>
+            <div class="btn-group w-100" role="group" aria-label="Filtre des classes comptables">
+                <button type="button" class="btn btn-outline-primary" onclick="filterAccountsByClass('all')">Tout</button>
                 {% for class_num in range(1, 8) %}
-                <button type="button" class="btn btn-outline-primary" onclick="filterAccountsByClass('{{ class_num }}')">Class {{ class_num }}</button>
+                <button type="button" class="btn btn-outline-primary" onclick="filterAccountsByClass('{{ class_num }}')">Classe {{ class_num }}</button>
                 {% endfor %}
             </div>
         </div>
     </div>
 
     <div id="no-results-message" style="display: none;" class="alert alert-info">
-        No accounts found matching your search criteria.
+        Aucun compte ne correspond à vos critères de recherche.
     </div>
 
     {% for account_class in accounts %}
