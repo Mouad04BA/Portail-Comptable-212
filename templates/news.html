@@ -95,7 +95,7 @@
                 {% for date_str in dates %}
                 <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" data-filter-date="{{ date_str }}">
                     {{ date_str }}
-                    <span class="badge bg-secondary rounded-pill">{{ news_items|selectattr('date', 'search', date_str[:7])|list|length }}</span>
+                    <span class="badge bg-secondary rounded-pill">{{ news_items|selectattr('date', 'startswith', date_str[:7])|list|length }}</span>
                 </a>
                 {% endfor %}
             </div>
