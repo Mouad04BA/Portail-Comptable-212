@@ -1,0 +1,47 @@
+Développer un site web d'informations comptables marocaines, en utilisant une solution Python-only (ex: Anvil, Flask, Django). Il devra comporter un mode sombre/clair. Inclure des animations/images 3D là où c'est approprié. Le contenu doit être purement informatif, couvrant les sections suivantes: 
+
+1. Accueil (Home)
+2. Plan Comptable Marocain
+3. Échéances Fiscales (IS, IR, TVA)
+4. Actualités Économiques & Financières
+5. Procédure de Dépôt de Bilan
+6. Ressources utiles & liens
+7. À propos / Contact
+
+L'architecture du site doit inclure:
+
+- Une section Accueil avec une présentation du site et des principaux services
+- Une page Plan Comptable détaillant toutes les classes comptables marocaines (1-7) avec leur structure et leurs descriptions
+- Un calendrier des échéances fiscales pour l'IS, l'IR et la TVA avec des rappels visuels
+- Une section Actualités présentant les dernières informations économiques et financières du Maroc
+- Un guide détaillé sur la procédure de dépôt de bilan avec les étapes et FAQ
+- Une section Ressources avec des liens vers des documents officiels et outils utiles
+- Une page Contact avec un formulaire de contact fonctionnel
+
+Le site doit être responsive, facile à naviguer, avec un design moderne inspiré des couleurs du drapeau marocain (rouge et vert). Une attention particulière doit être portée à l'expérience utilisateur pour les professionnels de la comptabilité.
+Ce prompt capture l'essence de votre projet actuel et peut être utilisé pour recréer le site avec une solution Python-only comme Anvil, Flask ou Django sur une autre plateforme.
+
+Voici un prompt qui décrit ce projet pour le recréer sur une autre plateforme utilisant Python:
+
+Développer un site web d'informations comptables marocaines, en utilisant une solution Python-only (ex: Anvil, Flask, Django). Le site ne devra pas nécessiter de connexion/inscription utilisateur. Il devra comporter un mode sombre/clair. Inclure des animations/images 3D là où c'est approprié. Le contenu doit être purement informatif, couvrant les sections suivantes:
+
+1. Accueil (Home)
+2. Plan Comptable Marocain
+3. Échéances Fiscales (IS, IR, TVA)
+4. Actualités Économiques & Financières
+5. Procédure de Dépôt de Bilan
+6. Ressources utiles & liens
+7. À propos / Contact
+
+L'architecture du site doit inclure:
+
+- Une section Accueil avec une présentation du site et des principaux services
+- Une page Plan Comptable détaillant toutes les classes comptables marocaines (1-7) avec leur structure et leurs descriptions
+- Un calendrier des échéances fiscales pour l'IS, l'IR et la TVA avec des rappels visuels
+- Une section Actualités présentant les dernières informations économiques et financières du Maroc
+- Un guide détaillé sur la procédure de dépôt de bilan avec les étapes et FAQ
+- Une section Ressources avec des liens vers des documents officiels et outils utiles
+- Une page Contact avec un formulaire de contact fonctionnel
+
+Le site doit être responsive, facile à naviguer, avec un design moderne inspiré des couleurs du drapeau marocain (rouge et vert). Une attention particulière doit être portée à l'expérience utilisateur pour les professionnels de la comptabilité.
+Ce prompt capture l'essence de votre projet actuel et peut être utilisé pour recréer le site avec une solution Python-only comme Anvil, Flask ou Django sur une autre plateforme. En utilisons Anvil ou autre solution Python-only pour le frontend + backend le maximums en .py
