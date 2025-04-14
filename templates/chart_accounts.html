@@ -43,9 +43,9 @@
 
     {% for account_class in accounts %}
     <div class="account-class fade-in" id="class-{{ account_class.class_number }}">
-        <div class="account-class-header">
+        <div class="account-class-header" style="cursor: pointer;">
             <h3>Class {{ account_class.class_number }}: {{ account_class.class_name }}</h3>
-            <button class="btn btn-sm btn-outline-secondary">
+            <button type="button" class="btn btn-sm btn-outline-secondary">
                 <i class="bi bi-chevron-down toggle-icon"></i>
             </button>
         </div>

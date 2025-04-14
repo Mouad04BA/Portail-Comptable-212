@@ -21,7 +21,13 @@ function initAccountClassCollapse() {
   const classHeaders = document.querySelectorAll('.account-class-header');
   
   classHeaders.forEach(header => {
-    header.addEventListener('click', function() {
+    // Add click event to the header element
+    header.addEventListener('click', function(e) {
+      // Prevent default action if clicked on button
+      if (e.target.tagName === 'BUTTON' || e.target.tagName === 'I') {
+        e.preventDefault();
+      }
+      
       // Find the content container that follows this header
       const content = this.nextElementSibling;
       
@@ -38,6 +44,18 @@ function initAccountClassCollapse() {
         this.querySelector('.toggle-icon').classList.add('bi-chevron-up');
       }
     });
+    
+    // Also add click event to the button itself
+    const button = header.querySelector('button');
+    if (button) {
+      button.addEventListener('click', function(e) {
+        // Prevent propagation to avoid double triggering
+        e.stopPropagation();
+        
+        // Trigger click on parent header
+        header.click();
+      });
+    }
   });
   
   // Open the first class by default

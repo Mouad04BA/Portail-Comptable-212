@@ -308,7 +308,7 @@ function updateCountdown(element, targetDate) {
   
   // Update element content
   if (diffDays > 0) {
-    element.textContent = `${diffDays} days`;
+    element.textContent = `${diffDays} jours`;
     
     // Add urgency classes
     if (diffDays <= 7) {
@@ -319,10 +319,10 @@ function updateCountdown(element, targetDate) {
       element.className = 'badge bg-primary countdown';
     }
   } else if (diffDays === 0) {
-    element.textContent = 'Today!';
+    element.textContent = 'Aujourd\'hui!';
     element.className = 'badge bg-danger countdown';
   } else {
-    element.textContent = 'Passed';
+    element.textContent = 'Passé';
     element.className = 'badge bg-secondary countdown';
   }
 }

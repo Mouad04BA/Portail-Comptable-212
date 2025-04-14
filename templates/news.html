@@ -93,9 +93,8 @@
             <div class="list-group fade-in">
                 {% set dates = news_items|map(attribute='date')|list|unique %}
                 {% for date_str in dates %}
-                {% set date_obj = date_str|strptime('%Y-%m-%d') %}
                 <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" data-filter-date="{{ date_str }}">
-                    {{ date_obj.strftime('%B %Y') }}
+                    {{ date_str }}
                     <span class="badge bg-secondary rounded-pill">{{ news_items|selectattr('date', 'search', date_str[:7])|list|length }}</span>
                 </a>
                 {% endfor %}
