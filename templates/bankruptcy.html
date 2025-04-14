@@ -1,0 +1,245 @@
+{% extends 'layout.html' %}
+
+{% block title %}Bankruptcy Filing Process in Morocco{% endblock %}
+
+{% block hero %}
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 text-center text-lg-start">
+                <h1 class="mb-4 fade-in">Bankruptcy Filing Process</h1>
+                <p class="lead mb-4 fade-in">Complete guide to the bankruptcy filing process in Morocco with step-by-step instructions and frequently asked questions.</p>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block text-center mt-5 mt-lg-0">
+                <img src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643" class="img-fluid hero-img rounded" alt="Bankruptcy Filing" width="500">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<!-- Process Navigation -->
+<div class="mb-4 fade-in">
+    <nav class="nav nav-pills nav-fill">
+        <a class="nav-link active" href="#filing-process">Filing Process</a>
+        <a class="nav-link" href="#faq-section">FAQs</a>
+        <a class="nav-link" href="#resources-section">Resources</a>
+    </nav>
+</div>
+
+<!-- Filing Process Section -->
+<section id="filing-process" class="mb-5">
+    <h2 class="section-title mb-4">Bankruptcy Filing Process</h2>
+    
+    <p class="lead mb-4">Filing for bankruptcy in Morocco is a structured legal process governed by the Commercial Code. Below are the key steps involved in the procedure, from initial assessment to closure.</p>
+    
+    <div class="mb-4">
+        <div class="progress" style="height: 3px;">
+            <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <div class="d-flex justify-content-between text-muted small">
+            <span>Assessment</span>
+            <span>Petition</span>
+            <span>Court Review</span>
+            <span>Implementation</span>
+            <span>Closure</span>
+        </div>
+    </div>
+    
+    <!-- Steps -->
+    <div class="steps-container">
+        {% for step in process %}
+        <div class="filing-step fade-in" id="step-{{ step.step }}">
+            <h3 class="filing-step-title">Step {{ step.step }}: {{ step.title }}</h3>
+            <p>{{ step.description }}</p>
+            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#step-details-{{ step.step }}" aria-expanded="false">
+                Show Details <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="collapse mt-3" id="step-details-{{ step.step }}">
+                <div class="card card-body">
+                    {{ step.details|safe }}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section id="faq-section" class="mb-5">
+    <h2 class="section-title mb-4">Frequently Asked Questions</h2>
+    
+    <div class="accordion fade-in" id="bankruptcyFAQ">
+        {% for item in faq %}
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading{{ loop.index }}">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ loop.index }}" aria-expanded="false" aria-controls="collapse{{ loop.index }}">
+                    {{ item.question }}
+                </button>
+            </h2>
+            <div id="collapse{{ loop.index }}" class="accordion-collapse collapse" aria-labelledby="heading{{ loop.index }}" data-bs-parent="#bankruptcyFAQ">
+                <div class="accordion-body">
+                    {{ item.answer|safe }}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Resources Section -->
+<section id="resources-section" class="mb-5 fade-in">
+    <h2 class="section-title mb-4">Bankruptcy Resources</h2>
+    
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h3 class="h5 mb-3">Official Legal References</h3>
+                    <ul>
+                        <li><a href="https://www.sgg.gov.ma/" target="_blank">Moroccan Commercial Code (Book V) - Official Text</a></li>
+                        <li><a href="https://www.tribunaux.ma/" target="_blank">Commercial Courts of Morocco - Official Website</a></li>
+                        <li><a href="https://adala.justice.gov.ma/" target="_blank">Adala Justice Portal - Legal Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h3 class="h5 mb-3">Professional Assistance</h3>
+                    <p>For bankruptcy proceedings, it's highly recommended to seek professional assistance from:</p>
+                    <ul>
+                        <li>Legal counsel specialized in commercial and bankruptcy law</li>
+                        <li>Certified public accountants (Experts Comptables)</li>
+                        <li>Financial advisors with bankruptcy expertise</li>
+                    </ul>
+                    <p>Visit the <a href="{{ url_for('resources_page') }}">Resources</a> section for directories of qualified professionals.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-body">
+            <h3 class="h5 mb-3">Bankruptcy Forms & Templates</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <ul>
+                        <li>
+                            <i class="bi bi-file-earmark-text me-2"></i>
+                            <a href="#" onclick="showNotification('Document will be available for download after login', 'info'); return false;">Bankruptcy Petition Template</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-file-earmark-spreadsheet me-2"></i>
+                            <a href="#" onclick="showNotification('Document will be available for download after login', 'info'); return false;">Assets and Liabilities Statement Template</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-file-earmark-check me-2"></i>
+                            <a href="#" onclick="showNotification('Document will be available for download after login', 'info'); return false;">Creditor Claim Form</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul>
+                        <li>
+                            <i class="bi bi-file-earmark-pdf me-2"></i>
+                            <a href="#" onclick="showNotification('Document will be available for download after login', 'info'); return false;">Judicial Reorganization Plan Template</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-file-earmark-bar-graph me-2"></i>
+                            <a href="#" onclick="showNotification('Document will be available for download after login', 'info'); return false;">Cash Flow Projection Worksheet</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-file-earmark-ruled me-2"></i>
+                            <a href="#" onclick="showNotification('Document will be available for download after login', 'info'); return false;">Employee Notice Template</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="text-center my-5 py-5 bg-light rounded fade-in">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h2>Need Professional Assistance?</h2>
+            <p class="lead">Bankruptcy proceedings can be complex. Our network of legal and financial experts can provide guidance tailored to your situation.</p>
+            <a href="{{ url_for('contact_page') }}" class="btn btn-lg btn-primary mt-3">Contact Us</a>
+        </div>
+    </div>
+</section>
+
+<!-- Legal Disclaimer -->
+<section class="mb-5 fade-in">
+    <div class="alert alert-warning">
+        <h4 class="alert-heading">Legal Disclaimer</h4>
+        <p>The information provided on this page is for general informational purposes only and should not be considered as legal advice. Bankruptcy laws in Morocco are complex and may change over time. We strongly recommend consulting with a qualified legal professional for advice specific to your situation.</p>
+        <hr>
+        <p class="mb-0">This content was last updated: January 2023</p>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Smooth scrolling for navigation pills
+        document.querySelectorAll('.nav-pills a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                // Update active class
+                document.querySelectorAll('.nav-pills a').forEach(link => {
+                    link.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerOffset = 100; // Adjust based on your fixed header height
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+        
+        // Update active nav pill on scroll
+        window.addEventListener('scroll', function() {
+            const sections = ['filing-process', 'faq-section', 'resources-section'];
+            let currentSection = '';
+            
+            sections.forEach(sectionId => {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    if (window.pageYOffset >= sectionTop - 150 && window.pageYOffset < sectionTop + sectionHeight - 150) {
+                        currentSection = sectionId;
+                    }
+                }
+            });
+            
+            if (currentSection) {
+                document.querySelectorAll('.nav-pills a').forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + currentSection) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    });
+</script>
+{% endblock %}

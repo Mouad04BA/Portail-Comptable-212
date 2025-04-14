@@ -1,0 +1,277 @@
+{% extends 'layout.html' %}
+
+{% block title %}Moroccan Fiscal Deadlines{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* Calendar styling */
+    .calendar-days-header {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+    
+    .calendar-days-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 2px;
+    }
+    
+    .calendar-day {
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        font-size: 0.8rem;
+        border-radius: 4px;
+        background-color: var(--secondary-bg);
+    }
+    
+    .calendar-day.empty {
+        background-color: transparent;
+    }
+    
+    .calendar-day.today {
+        background-color: var(--primary-green);
+        color: white;
+        font-weight: bold;
+    }
+    
+    .calendar-day.has-deadline {
+        font-weight: bold;
+        border: 1px solid var(--primary-red);
+    }
+    
+    .deadline-dot {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        bottom: 2px;
+    }
+    
+    .deadline-dot.is {
+        background-color: var(--primary-green);
+        left: 25%;
+    }
+    
+    .deadline-dot.ir {
+        background-color: var(--primary-red);
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .deadline-dot.tva {
+        background-color: var(--accent-gold);
+        right: 25%;
+    }
+    
+    .deadline-is {
+        border-left-color: var(--primary-green);
+    }
+    
+    .deadline-ir {
+        border-left-color: var(--primary-red);
+    }
+    
+    .deadline-tva {
+        border-left-color: var(--accent-gold);
+    }
+    
+    .deadline-badge {
+        min-width: 70px;
+    }
+</style>
+{% endblock %}
+
+{% block hero %}
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 text-center text-lg-start">
+                <h1 class="mb-4 fade-in">Fiscal Deadlines</h1>
+                <p class="lead mb-4 fade-in">Stay updated with all important tax deadlines for IS, IR, and TVA with visual reminders and detailed information.</p>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block text-center mt-5 mt-lg-0">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40" class="img-fluid hero-img rounded" alt="Financial Calendar" width="500">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<!-- Fiscal Deadlines Overview -->
+<section class="mb-5">
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <h2 class="section-title">Tax Deadlines Overview</h2>
+        </div>
+        <div class="col-md-4">
+            <div class="btn-group w-100 mb-3" role="group" aria-label="Deadline filters">
+                <button type="button" class="btn btn-outline-primary deadline-filter active" data-filter="all">All</button>
+                <button type="button" class="btn btn-outline-success deadline-filter" data-filter="is">IS</button>
+                <button type="button" class="btn btn-outline-danger deadline-filter" data-filter="ir">IR</button>
+                <button type="button" class="btn btn-outline-warning deadline-filter" data-filter="tva">TVA</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mb-5">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 fade-in">
+                <div class="card-body">
+                    <h3 class="h5 card-title">
+                        <span class="feature-icon" style="width: 2rem; height: 2rem; font-size: 1rem;">
+                            <i class="bi bi-building"></i>
+                        </span>
+                        Corporate Tax (IS)
+                    </h3>
+                    <p>Corporate Income Tax (Impôt sur les Sociétés) is applied to companies' profits. Key deadlines include:</p>
+                    <ul>
+                        <li>Annual return filing (March 31)</li>
+                        <li>Quarterly installments (March, June, September, December)</li>
+                    </ul>
+                    <p class="small text-muted">Corporate tax rates vary from 10% to 31% depending on the company's net profit.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 fade-in">
+                <div class="card-body">
+                    <h3 class="h5 card-title">
+                        <span class="feature-icon" style="width: 2rem; height: 2rem; font-size: 1rem; background-color: var(--primary-red);">
+                            <i class="bi bi-person"></i>
+                        </span>
+                        Income Tax (IR)
+                    </h3>
+                    <p>Personal Income Tax (Impôt sur le Revenu) applies to individuals and sole proprietorships. Key deadlines include:</p>
+                    <ul>
+                        <li>Annual return filing (March 31)</li>
+                        <li>Monthly salary withholdings (end of each month)</li>
+                        <li>Quarterly payments for professional income</li>
+                    </ul>
+                    <p class="small text-muted">Income tax rates are progressive, ranging from 0% to 38% depending on income level.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 fade-in">
+                <div class="card-body">
+                    <h3 class="h5 card-title">
+                        <span class="feature-icon" style="width: 2rem; height: 2rem; font-size: 1rem; background-color: var(--accent-gold);">
+                            <i class="bi bi-receipt"></i>
+                        </span>
+                        Value Added Tax (TVA)
+                    </h3>
+                    <p>Value Added Tax (Taxe sur la Valeur Ajoutée) is collected on the sale of goods and services. Key deadlines include:</p>
+                    <ul>
+                        <li>Monthly filing for companies with turnover > 1M MAD</li>
+                        <li>Quarterly filing for companies with turnover < 1M MAD</li>
+                    </ul>
+                    <p class="small text-muted">Standard TVA rate is 20%, with reduced rates of 14%, 10%, and 7% for specific goods and services.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Calendar visualization -->
+    <div id="calendar-visualization" class="mb-5 fade-in">
+        <!-- Calendar will be generated by JavaScript -->
+    </div>
+    
+    <!-- Detailed Deadlines List -->
+    <div class="mb-5 fade-in">
+        <h2 class="section-title mb-4">Detailed Deadlines</h2>
+        
+        <div id="no-deadlines-message" style="display: none;" class="alert alert-info">
+            No deadlines match your filter criteria.
+        </div>
+        
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Tax Type</th>
+                        <th>Deadline Name</th>
+                        <th>Due Date</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Payment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for deadline in deadlines %}
+                    <tr class="deadline-item" data-tax-type="{{ deadline.tax_type }}" data-due-date="{{ deadline.due_date if deadline.due_date|length == 10 else '' }}">
+                        <td>
+                            <span class="badge deadline-badge deadline-{{ deadline.tax_type|lower }}">{{ deadline.tax_type }}</span>
+                        </td>
+                        <td class="deadline-title">{{ deadline.name }}</td>
+                        <td>
+                            {{ deadline.due_date }}
+                            {% if deadline.due_date|length == 10 %}
+                            <span data-countdown="{{ deadline.due_date }}" class="badge bg-primary countdown ms-2"></span>
+                            {% endif %}
+                        </td>
+                        <td>{{ deadline.description }}</td>
+                        <td><span class="badge bg-secondary">{{ deadline.category }}</span></td>
+                        <td>
+                            {% if deadline.payment_required %}
+                            <i class="bi bi-cash text-success" title="Payment required"></i>
+                            {% else %}
+                            <i class="bi bi-file-text" title="Filing only"></i>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- Tax Compliance Tips -->
+    <section class="mb-5 fade-in">
+        <h2 class="section-title mb-4">Tax Compliance Tips</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3 class="h5 mb-3">Filing Best Practices</h3>
+                        <ul>
+                            <li>Start preparing your returns at least 2 weeks before the deadline</li>
+                            <li>Keep all supporting documents organized and readily accessible</li>
+                            <li>Consider using the DGI's online SIMPL platform for electronic filing</li>
+                            <li>Reconcile your accounting records before filing to avoid discrepancies</li>
+                            <li>Double-check all calculations and ensure consistency across different tax returns</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="h5 mb-3">Avoiding Common Mistakes</h3>
+                        <ul>
+                            <li>Missing filing deadlines (which can result in penalties from 5% to 15%)</li>
+                            <li>Incorrect classification of expenses as deductible or non-deductible</li>
+                            <li>Failure to maintain proper documentation for at least 10 years</li>
+                            <li>Inconsistency between different tax declarations (IS, TVA, etc.)</li>
+                            <li>Forgetting to account for recent tax law changes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/fiscal_calendar.js') }}"></script>
+{% endblock %}

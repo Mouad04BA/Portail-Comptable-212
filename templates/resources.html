@@ -1,0 +1,316 @@
+{% extends 'layout.html' %}
+
+{% block title %}Moroccan Accounting Resources{% endblock %}
+
+{% block hero %}
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 text-center text-lg-start">
+                <h1 class="mb-4 fade-in">Resources & Useful Links</h1>
+                <p class="lead mb-4 fade-in">A comprehensive collection of resources for Moroccan accounting, taxation, and financial information.</p>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block text-center mt-5 mt-lg-0">
+                <img src="https://images.unsplash.com/photo-1433574466251-fe1be0d9b3d2" class="img-fluid hero-img rounded" alt="Moroccan Resources" width="500">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<!-- Resources Navigation -->
+<section class="mb-4 fade-in">
+    <div class="d-flex flex-wrap justify-content-center gap-2">
+        {% for category_group in resources %}
+        <a href="#{{ category_group.category|lower|replace(' ', '-') }}" class="btn btn-outline-primary">
+            {{ category_group.category }}
+        </a>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Resource Categories -->
+{% for category_group in resources %}
+<section id="{{ category_group.category|lower|replace(' ', '-') }}" class="mb-5">
+    <h2 class="section-title mb-4">{{ category_group.category }}</h2>
+    
+    <div class="row">
+        {% for resource in category_group.resources %}
+        <div class="col-md-6 mb-4 fade-in">
+            <div class="resource-card">
+                <div class="resource-icon">
+                    <i class="{{ resource.icon }}"></i>
+                </div>
+                <div class="resource-content">
+                    <h3 class="resource-title">{{ resource.title }}</h3>
+                    <p class="resource-description">{{ resource.description }}</p>
+                    <a href="{{ resource.url }}" target="_blank" class="btn btn-sm btn-outline-primary">
+                        Visit Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endfor %}
+
+<!-- Document Templates -->
+<section class="mb-5 fade-in">
+    <h2 class="section-title mb-4">Document Templates</h2>
+    
+    <div class="card">
+        <div class="card-body">
+            <p class="lead">Access useful templates and forms for accounting and fiscal purposes.</p>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="h5 mb-3">Accounting Templates</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="bi bi-file-earmark-spreadsheet me-2 text-primary"></i>
+                            <a href="#" onclick="showNotification('Template will be available for download after login', 'info'); return false;">Balance Sheet Template</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-file-earmark-spreadsheet me-2 text-primary"></i>
+                            <a href="#" onclick="showNotification('Template will be available for download after login', 'info'); return false;">Income Statement Template</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-file-earmark-spreadsheet me-2 text-primary"></i>
+                            <a href="#" onclick="showNotification('Template will be available for download after login', 'info'); return false;">Cash Flow Statement Template</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-file-earmark-spreadsheet me-2 text-primary"></i>
+                            <a href="#" onclick="showNotification('Template will be available for download after login', 'info'); return false;">Journal Entry Template</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="h5 mb-3">Tax Forms</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="bi bi-file-earmark-pdf me-2 text-danger"></i>
+                            <a href="#" onclick="showNotification('Form will be available for download after login', 'info'); return false;">IS Declaration Form</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-file-earmark-pdf me-2 text-danger"></i>
+                            <a href="#" onclick="showNotification('Form will be available for download after login', 'info'); return false;">IR Declaration Form</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-file-earmark-pdf me-2 text-danger"></i>
+                            <a href="#" onclick="showNotification('Form will be available for download after login', 'info'); return false;">TVA Declaration Form</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-file-earmark-pdf me-2 text-danger"></i>
+                            <a href="#" onclick="showNotification('Form will be available for download after login', 'info'); return false;">Employee Withholding Form</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Workshops and Training -->
+<section class="mb-5 fade-in">
+    <h2 class="section-title mb-4">Workshops & Training</h2>
+    
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h3 class="h5 card-title">Upcoming Webinars</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <span class="d-block fw-bold">New Tax Regulations for 2023</span>
+                                <small class="text-muted">May 15, 2023 | 10:00 AM</small>
+                            </div>
+                            <button class="btn btn-sm btn-outline-primary" onclick="showNotification('Registration will be available after login', 'info')">Register</button>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <span class="d-block fw-bold">IFRS Implementation in Morocco</span>
+                                <small class="text-muted">June 3, 2023 | 2:00 PM</small>
+                            </div>
+                            <button class="btn btn-sm btn-outline-primary" onclick="showNotification('Registration will be available after login', 'info')">Register</button>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <span class="d-block fw-bold">Digital Transformation in Accounting</span>
+                                <small class="text-muted">June 20, 2023 | 11:00 AM</small>
+                            </div>
+                            <button class="btn btn-sm btn-outline-primary" onclick="showNotification('Registration will be available after login', 'info')">Register</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h3 class="h5 card-title">Certification Programs</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <span class="d-block fw-bold">Certified Moroccan Tax Specialist</span>
+                            <small class="text-muted d-block mb-2">Duration: 3 months | Format: Online & In-person</small>
+                            <p class="small">Comprehensive program covering all aspects of Moroccan taxation system, regulations, and compliance.</p>
+                            <button class="btn btn-sm btn-outline-primary" onclick="showNotification('Program details will be available after login', 'info')">Learn More</button>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="d-block fw-bold">Advanced Moroccan Accounting</span>
+                            <small class="text-muted d-block mb-2">Duration: 6 months | Format: Online</small>
+                            <p class="small">In-depth study of the Moroccan Chart of Accounts, financial statements, and specialized accounting areas.</p>
+                            <button class="btn btn-sm btn-outline-primary" onclick="showNotification('Program details will be available after login', 'info')">Learn More</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Recommended Books -->
+<section class="mb-5 fade-in">
+    <h2 class="section-title mb-4">Recommended Books</h2>
+    
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <i class="bi bi-book" style="font-size: 3rem; color: var(--primary-green);"></i>
+                    </div>
+                    <h3 class="h6 card-title">Le Plan Comptable Marocain Expliqué</h3>
+                    <p class="card-text small">Comprehensive guide to the Moroccan Chart of Accounts with practical examples.</p>
+                    <small class="text-muted">Author: Mohamed Abdelkader</small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-3 mb-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <i class="bi bi-book" style="font-size: 3rem; color: var(--primary-green);"></i>
+                    </div>
+                    <h3 class="h6 card-title">Fiscalité Marocaine: Principes et Applications</h3>
+                    <p class="card-text small">Detailed overview of Moroccan tax system with case studies and practical applications.</p>
+                    <small class="text-muted">Author: Rachid El Haddaoui</small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-3 mb-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <i class="bi bi-book" style="font-size: 3rem; color: var(--primary-green);"></i>
+                    </div>
+                    <h3 class="h6 card-title">Guide Pratique des Normes Comptables Marocaines</h3>
+                    <p class="card-text small">Practical guide to Moroccan accounting standards with comparisons to IFRS.</p>
+                    <small class="text-muted">Author: Samira Bennouna</small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-3 mb-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <i class="bi bi-book" style="font-size: 3rem; color: var(--primary-green);"></i>
+                    </div>
+                    <h3 class="h6 card-title">Droit des Affaires au Maroc</h3>
+                    <p class="card-text small">Comprehensive overview of Moroccan business law, including accounting and tax regulations.</p>
+                    <small class="text-muted">Author: Hassan El Badri</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Suggestion Box -->
+<section class="mb-5 fade-in">
+    <div class="card bg-light">
+        <div class="card-body">
+            <h3 class="h5 mb-3">Suggest a Resource</h3>
+            <p>Know of a valuable resource that should be included on this page? Let us know!</p>
+            <form id="resource-suggestion-form">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" placeholder="Resource Name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="url" class="form-control" placeholder="URL (if applicable)">
+                    </div>
+                    <div class="col-12">
+                        <textarea class="form-control" rows="3" placeholder="Brief description of the resource" required></textarea>
+                    </div>
+                    <div class="col-12">
+                        <button type="button" class="btn btn-primary" onclick="suggestResource()">Submit Suggestion</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Smooth scrolling for category links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerOffset = 100; // Adjust based on your fixed header height
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+    });
+    
+    function suggestResource() {
+        // Get form inputs
+        const form = document.getElementById('resource-suggestion-form');
+        const inputs = form.querySelectorAll('input, textarea');
+        
+        // Check if form is valid
+        let isValid = true;
+        inputs.forEach(input => {
+            if (input.hasAttribute('required') && !input.value) {
+                isValid = false;
+                input.classList.add('is-invalid');
+            } else {
+                input.classList.remove('is-invalid');
+            }
+        });
+        
+        if (!isValid) {
+            showNotification('Please fill in all required fields', 'warning');
+            return;
+        }
+        
+        // In a real application, you would submit this data to the server
+        // For demo purposes, just show a success message and clear the form
+        showNotification('Thank you for your suggestion! We will review it soon.', 'success');
+        
+        // Clear form
+        inputs.forEach(input => input.value = '');
+    }
+</script>
+{% endblock %}

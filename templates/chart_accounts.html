@@ -1,0 +1,166 @@
+{% extends 'layout.html' %}
+
+{% block title %}Moroccan Chart of Accounts{% endblock %}
+
+{% block hero %}
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 text-center text-lg-start">
+                <h1 class="mb-4 fade-in">Moroccan Chart of Accounts</h1>
+                <p class="lead mb-4 fade-in">Complete reference for all 7 classes of the Moroccan accounting system with detailed descriptions and structure.</p>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block text-center mt-5 mt-lg-0">
+                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4" class="img-fluid hero-img rounded" alt="Moroccan Accounting" width="500">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<section class="mb-5">
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="input-group mb-3">
+                <span class="input-group-text"><i class="bi bi-search"></i></span>
+                <input type="text" class="form-control" id="account-search" placeholder="Search accounts by code or name...">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="btn-group w-100" role="group" aria-label="Account class filter">
+                <button type="button" class="btn btn-outline-primary" onclick="filterAccountsByClass('all')">All</button>
+                {% for class_num in range(1, 8) %}
+                <button type="button" class="btn btn-outline-primary" onclick="filterAccountsByClass('{{ class_num }}')">Class {{ class_num }}</button>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div id="no-results-message" style="display: none;" class="alert alert-info">
+        No accounts found matching your search criteria.
+    </div>
+
+    {% for account_class in accounts %}
+    <div class="account-class fade-in" id="class-{{ account_class.class_number }}">
+        <div class="account-class-header">
+            <h3>Class {{ account_class.class_number }}: {{ account_class.class_name }}</h3>
+            <button class="btn btn-sm btn-outline-secondary">
+                <i class="bi bi-chevron-down toggle-icon"></i>
+            </button>
+        </div>
+        <div class="account-class-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out;">
+            <p class="text-muted">{{ account_class.class_description }}</p>
+
+            {% for account in account_class.accounts %}
+            <div class="account-item">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h4 class="h6 mb-1">
+                        <span class="account-code">{{ account.code }}</span> - {{ account.name }}
+                    </h4>
+                    <button class="btn btn-sm btn-outline-secondary copy-code-btn" data-code="{{ account.code }}">
+                        <i class="bi bi-clipboard"></i>
+                    </button>
+                </div>
+                <p class="text-muted small mb-2">{{ account.description }}</p>
+
+                {% if account.sub_accounts %}
+                <div class="mt-3">
+                    <h5 class="h6 mb-2">Sub-accounts:</h5>
+                    <div class="row">
+                        {% for sub_account in account.sub_accounts %}
+                        <div class="col-md-6 mb-2 sub-account">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span>
+                                    <span class="account-code">{{ sub_account.code }}</span> - {{ sub_account.name }}
+                                </span>
+                                <button class="btn btn-sm btn-outline-secondary copy-code-btn" data-code="{{ sub_account.code }}">
+                                    <i class="bi bi-clipboard"></i>
+                                </button>
+                            </div>
+                            <small class="text-muted d-block">{{ sub_account.description }}</small>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</section>
+
+<!-- Account Detail Modal -->
+<div class="modal fade" id="accountDetailModal" tabindex="-1" aria-labelledby="accountDetailModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="accountDetailModalTitle"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <dl>
+                    <dt>Account Code</dt>
+                    <dd id="accountDetailCode"></dd>
+                    <dt>Description</dt>
+                    <dd id="accountDetailDescription"></dd>
+                </dl>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Learning Section -->
+<section class="mb-5 fade-in">
+    <h2 class="section-title mb-4">Understanding the Moroccan Chart of Accounts</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3 class="h5">Structure of Account Classes</h3>
+                    <p>The Moroccan Chart of Accounts is organized into 7 main classes:</p>
+                    <ul>
+                        <li><strong>Class 1:</strong> Financing accounts (equity, loans)</li>
+                        <li><strong>Class 2:</strong> Fixed assets accounts</li>
+                        <li><strong>Class 3:</strong> Current assets accounts (excluding cash)</li>
+                        <li><strong>Class 4:</strong> Current liabilities accounts (excluding cash)</li>
+                        <li><strong>Class 5:</strong> Cash accounts</li>
+                        <li><strong>Class 6:</strong> Expense accounts</li>
+                        <li><strong>Class 7:</strong> Revenue accounts</li>
+                    </ul>
+                    <p>Each class is divided into accounts and sub-accounts with specific numbering conventions.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="h5">Coding System</h3>
+                    <p>The Moroccan accounting code uses a decimal system where:</p>
+                    <ul>
+                        <li>The first digit indicates the class (1-7)</li>
+                        <li>The first two digits indicate the account</li>
+                        <li>The first three digits indicate the sub-account</li>
+                        <li>The additional digits provide further detailed breakdowns</li>
+                    </ul>
+                    <p>For example, in code <strong>5116</strong>:</p>
+                    <ul>
+                        <li>5: Class 5 (Cash accounts)</li>
+                        <li>51: Treasury - Assets</li>
+                        <li>511: Checks and values to be cashed</li>
+                        <li>5116: Specific type of check/value</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/chart_accounts.js') }}"></script>
+{% endblock %}
