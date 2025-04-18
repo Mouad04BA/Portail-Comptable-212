@@ -1,6 +1,3 @@
-"""
-Resources and useful links data for Moroccan accounting
-"""
 
 def get_all_resources():
     """
@@ -8,218 +5,207 @@ def get_all_resources():
     """
     resources = [
         {
-            "category": "Official Government Resources",
+            "category": "Ressources Gouvernementales Officielles",
             "resources": [
                 {
                     "title": "Direction Générale des Impôts (DGI)",
-                    "description": "The official website of the Moroccan Tax Authority providing tax laws, regulations, forms, and online services.",
+                    "description": "Le site officiel de l'Administration Fiscale Marocaine fournissant les lois fiscales, les réglementations, les formulaires et les services en ligne.",
                     "url": "https://www.tax.gov.ma/",
                     "icon": "fa-solid fa-landmark"
                 },
                 {
                     "title": "Office Marocain de la Propriété Industrielle et Commerciale (OMPIC)",
-                    "description": "Official body for business registration and intellectual property in Morocco.",
+                    "description": "Organisme officiel pour l'enregistrement des entreprises et la propriété intellectuelle au Maroc.",
                     "url": "https://www.ompic.ma/",
                     "icon": "fa-solid fa-building"
                 },
                 {
                     "title": "Trésorerie Générale du Royaume",
-                    "description": "The General Treasury of the Kingdom of Morocco provides information on public finances and government accounting.",
+                    "description": "La Trésorerie Générale du Royaume du Maroc fournit des informations sur les finances publiques et la comptabilité gouvernementale.",
                     "url": "https://www.tgr.gov.ma/",
                     "icon": "fa-solid fa-money-bill-transfer"
                 },
                 {
                     "title": "Ministère de l'Economie et des Finances",
-                    "description": "Morocco's Ministry of Economy and Finance website with economic policies and reports.",
+                    "description": "Site du Ministère de l'Économie et des Finances du Maroc avec les politiques économiques et les rapports.",
                     "url": "https://www.finances.gov.ma/",
                     "icon": "fa-solid fa-money-bill-trend-up"
                 }
             ]
         },
         {
-            "category": "Accounting & Taxation Resources",
+            "category": "Ressources Comptables et Fiscales",
             "resources": [
                 {
                     "title": "Conseil National de la Comptabilité (CNC)",
-                    "description": "The National Accounting Council that establishes accounting standards in Morocco.",
+                    "description": "Le Conseil National de la Comptabilité qui établit les normes comptables au Maroc.",
                     "url": "https://www.finances.gov.ma/fr/Pages/CNC/conseil-national-comptabilite.aspx",
                     "icon": "fa-solid fa-book"
                 },
                 {
                     "title": "Ordre des Experts Comptables",
-                    "description": "Professional organization of certified public accountants in Morocco.",
+                    "description": "Organisation professionnelle des experts-comptables agréés au Maroc.",
                     "url": "https://www.oecmaroc.com/",
                     "icon": "fa-solid fa-calculator"
                 },
                 {
                     "title": "Code Général des Impôts",
-                    "description": "The General Tax Code of Morocco (latest edition).",
+                    "description": "Le Code Général des Impôts du Maroc (dernière édition).",
                     "url": "https://www.tax.gov.ma/wps/portal/DGI/Documentation-fiscale/Code-general-des-impots",
                     "icon": "fa-solid fa-file-contract"
                 },
                 {
                     "title": "SIMPL - Services des Impôts en Ligne",
-                    "description": "Online tax services platform for electronic filing of tax returns.",
+                    "description": "Plateforme de services fiscaux en ligne pour la déclaration électronique des impôts.",
                     "url": "https://simpl.tax.gov.ma/",
                     "icon": "fa-solid fa-laptop"
                 }
             ]
         },
         {
-            "category": "Business Support Organizations",
+            "category": "Organisations de Soutien aux Entreprises",
             "resources": [
                 {
                     "title": "Confédération Générale des Entreprises du Maroc (CGEM)",
-                    "description": "The main representative organization of private sector businesses in Morocco.",
+                    "description": "L'organisation représentative principale des entreprises du secteur privé au Maroc.",
                     "url": "https://www.cgem.ma/",
                     "icon": "fa-solid fa-handshake"
                 },
                 {
                     "title": "Agence Marocaine de Développement des Investissements (AMDI)",
-                    "description": "Moroccan Investment Development Agency providing information for investors.",
+                    "description": "L'Agence Marocaine de Développement des Investissements fournissant des informations aux investisseurs.",
                     "url": "https://www.amdie.gov.ma/",
                     "icon": "fa-solid fa-chart-line"
                 },
                 {
                     "title": "Centres Régionaux d'Investissement (CRI)",
-                    "description": "Regional Investment Centers providing support for business creation and investment.",
+                    "description": "Centres Régionaux d'Investissement offrant un soutien à la création d'entreprise et à l'investissement.",
                     "url": "https://www.cri-invest.ma/",
                     "icon": "fa-solid fa-briefcase"
                 },
                 {
                     "title": "Maroc PME",
-                    "description": "National agency supporting small and medium enterprises in Morocco.",
+                    "description": "Agence nationale de soutien aux petites et moyennes entreprises au Maroc.",
                     "url": "https://www.marocpme.gov.ma/",
                     "icon": "fa-solid fa-store"
                 }
             ]
         },
         {
-            "category": "Legal Resources",
+            "category": "Ressources Juridiques",
             "resources": [
                 {
                     "title": "Secrétariat Général du Gouvernement - Législation",
-                    "description": "Official repository of Moroccan laws and regulations.",
+                    "description": "Dépositaire officiel des lois et règlements marocains.",
                     "url": "https://www.sgg.gov.ma/",
                     "icon": "fa-solid fa-gavel"
                 },
                 {
                     "title": "Code de Commerce",
-                    "description": "The Commercial Code of Morocco.",
+                    "description": "Le Code de Commerce du Maroc.",
                     "url": "https://www.wipo.int/edocs/lexdocs/laws/fr/ma/ma005fr.pdf",
                     "icon": "fa-solid fa-balance-scale"
                 },
                 {
                     "title": "Bulletin Officiel",
-                    "description": "The Official Bulletin where new laws and regulations are published.",
+                    "description": "Le Bulletin Officiel où sont publiées les nouvelles lois et réglementations.",
                     "url": "https://www.sgg.gov.ma/BulletinOfficiel.aspx",
                     "icon": "fa-solid fa-newspaper"
                 },
                 {
                     "title": "CABINETBASSAMAT & Associée",
-                    "description": "Legal resources and updates on Moroccan business law.",
+                    "description": "Ressources juridiques et mises à jour sur le droit des affaires marocain.",
                     "url": "https://www.cabinetbassamat.com/",
                     "icon": "fa-solid fa-scale-balanced"
                 }
             ]
         },
         {
-            "category": "Financial Information",
+            "category": "Informations Financières",
             "resources": [
                 {
                     "title": "Bank Al-Maghrib",
-                    "description": "The Central Bank of Morocco with monetary policy information and economic reports.",
+                    "description": "La Banque Centrale du Maroc avec des informations sur la politique monétaire et les rapports économiques.",
                     "url": "https://www.bkam.ma/",
                     "icon": "fa-solid fa-bank"
                 },
                 {
                     "title": "Bourse de Casablanca",
-                    "description": "The Casablanca Stock Exchange with market data and listed companies information.",
+                    "description": "La Bourse de Casablanca avec les données du marché et les informations sur les sociétés cotées.",
                     "url": "https://www.casablanca-bourse.com/",
                     "icon": "fa-solid fa-chart-simple"
                 },
                 {
                     "title": "Autorité Marocaine du Marché des Capitaux (AMMC)",
-                    "description": "The Moroccan Capital Market Authority with regulations and market oversight.",
+                    "description": "L'Autorité Marocaine du Marché des Capitaux avec les réglementations et la supervision du marché.",
                     "url": "https://www.ammc.ma/",
                     "icon": "fa-solid fa-shield-halved"
                 },
                 {
                     "title": "Haut Commissariat au Plan",
-                    "description": "Morocco's High Commission for Planning with economic and social statistics.",
+                    "description": "Le Haut Commissariat au Plan du Maroc avec les statistiques économiques et sociales.",
                     "url": "https://www.hcp.ma/",
                     "icon": "fa-solid fa-chart-pie"
                 }
             ]
         },
         {
-            "category": "Educational Resources",
+            "category": "Ressources Éducatives",
             "resources": [
                 {
                     "title": "Plan Comptable Marocain (PCM)",
-                    "description": "Detailed information on the Moroccan Chart of Accounts structure and usage.",
+                    "description": "Informations détaillées sur la structure et l'utilisation du Plan Comptable Marocain.",
                     "url": "https://www.compta-maroc.com/plan-comptable-marocain/",
                     "icon": "fa-solid fa-list-ol"
                 },
                 {
                     "title": "Compta Maroc",
-                    "description": "Educational portal with accounting courses, examples, and explanations for Moroccan accounting.",
+                    "description": "Portail éducatif avec des cours de comptabilité, des exemples et des explications pour la comptabilité marocaine.",
                     "url": "https://www.compta-maroc.com/",
                     "icon": "fa-solid fa-graduation-cap"
                 },
                 {
                     "title": "Comptazine",
-                    "description": "Resource for accounting professionals with articles, forums, and tools.",
+                    "description": "Ressource pour les professionnels de la comptabilité avec des articles, forums et outils.",
                     "url": "https://www.comptazine.fr/",
                     "icon": "fa-solid fa-book-open"
                 },
                 {
                     "title": "Lexis Maroc",
-                    "description": "Legal and accounting resource portal with documentation and explanations.",
+                    "description": "Portail de ressources juridiques et comptables avec documentation et explications.",
                     "url": "https://www.lexismaroc.ma/",
                     "icon": "fa-solid fa-chalkboard-user"
                 }
             ]
         },
         {
-            "category": "International Standards",
+            "category": "Normes Internationales",
             "resources": [
                 {
-                    "title": "International Financial Reporting Standards (IFRS)",
-                    "description": "The official website of the IFRS Foundation with standards and interpretations.",
+                    "title": "Normes Internationales d'Information Financière (IFRS)",
+                    "description": "Le site officiel de la Fondation IFRS avec les normes et interprétations.",
                     "url": "https://www.ifrs.org/",
                     "icon": "fa-solid fa-globe"
                 },
                 {
                     "title": "International Accounting Standards Board (IASB)",
-                    "description": "The standard-setting body for IFRS with updates and exposure drafts.",
+                    "description": "L'organisme de normalisation des IFRS avec les mises à jour et les exposés-sondages.",
                     "url": "https://www.ifrs.org/groups/international-accounting-standards-board/",
                     "icon": "fa-solid fa-earth-africa"
                 },
                 {
-                    "title": "International Federation of Accountants (IFAC)",
-                    "description": "Global organization for the accountancy profession with resources and publications.",
+                    "title": "Fédération Internationale des Experts-Comptables (IFAC)",
+                    "description": "Organisation mondiale de la profession comptable avec ressources et publications.",
                     "url": "https://www.ifac.org/",
                     "icon": "fa-solid fa-users"
                 },
                 {
-                    "title": "World Bank - Accounting and Auditing ROSC for Morocco",
-                    "description": "Reports on the Observance of Standards and Codes (ROSC) for accounting in Morocco.",
+                    "title": "Banque Mondiale - ROSC Comptabilité et Audit pour le Maroc",
+                    "description": "Rapports sur l'Observation des Normes et Codes (ROSC) pour la comptabilité au Maroc.",
                     "url": "https://www.worldbank.org/en/country/morocco",
                     "icon": "fa-solid fa-building-columns"
                 }
             ]
         }
     ]
-    
     return resources
-
-def get_resources_by_category(category):
-    """
-    Returns resources filtered by category
-    """
-    all_resources = get_all_resources()
-    for resource_category in all_resources:
-        if resource_category["category"].lower() == category.lower():
-            return resource_category["resources"]
-    return []
