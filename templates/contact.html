@@ -1,17 +1,18 @@
+
 {% extends 'layout.html' %}
 
-{% block title %}Contact Us - Moroccan Accounting Info Hub{% endblock %}
+{% block title %}Contactez-Nous - Hub d'Information Comptable Marocain{% endblock %}
 
 {% block hero %}
 <section class="hero-section">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 text-center text-lg-start">
-                <h1 class="mb-4 fade-in">Contact Us</h1>
-                <p class="lead mb-4 fade-in">Have questions about Moroccan accounting? We're here to help. Get in touch with our team of experts.</p>
+                <h1 class="mb-4 fade-in">Contactez-Nous</h1>
+                <p class="lead mb-4 fade-in">Vous avez des questions sur la comptabilité marocaine ? Nous sommes là pour vous aider. Contactez notre équipe d'experts.</p>
             </div>
             <div class="col-lg-6 d-none d-lg-block text-center mt-5 mt-lg-0">
-                <img src="https://images.unsplash.com/photo-1605977418529-26ac7128bee2" class="img-fluid hero-img rounded" alt="Contact Us" width="500">
+                <img src="https://images.unsplash.com/photo-1605977418529-26ac7128bee2" class="img-fluid hero-img rounded" alt="Contactez-Nous" width="500">
             </div>
         </div>
     </div>
@@ -23,14 +24,14 @@
     <!-- Contact Form -->
     <div class="col-lg-7 mb-5 fade-in">
         <div class="contact-form">
-            <h2 class="h3 mb-4">Send Us a Message</h2>
+            <h2 class="h3 mb-4">Envoyez-nous un Message</h2>
             
             <form method="POST" action="{{ url_for('contact_page') }}">
                 {{ form.csrf_token }}
                 
                 <div class="mb-3">
-                    <label for="{{ form.name.id }}" class="form-label">Your Name</label>
-                    {{ form.name(class="form-control", placeholder="Enter your name") }}
+                    <label for="{{ form.name.id }}" class="form-label">Votre Nom</label>
+                    {{ form.name(class="form-control", placeholder="Entrez votre nom") }}
                     {% if form.name.errors %}
                         <div class="invalid-feedback d-block">
                             {% for error in form.name.errors %}
@@ -41,8 +42,8 @@
                 </div>
                 
                 <div class="mb-3">
-                    <label for="{{ form.email.id }}" class="form-label">Email Address</label>
-                    {{ form.email(class="form-control", placeholder="Enter your email") }}
+                    <label for="{{ form.email.id }}" class="form-label">Adresse Email</label>
+                    {{ form.email(class="form-control", placeholder="Entrez votre email") }}
                     {% if form.email.errors %}
                         <div class="invalid-feedback d-block">
                             {% for error in form.email.errors %}
@@ -53,8 +54,8 @@
                 </div>
                 
                 <div class="mb-3">
-                    <label for="{{ form.subject.id }}" class="form-label">Subject</label>
-                    {{ form.subject(class="form-control", placeholder="What is your message about?") }}
+                    <label for="{{ form.subject.id }}" class="form-label">Sujet</label>
+                    {{ form.subject(class="form-control", placeholder="Quel est le sujet de votre message ?") }}
                     {% if form.subject.errors %}
                         <div class="invalid-feedback d-block">
                             {% for error in form.subject.errors %}
@@ -66,7 +67,7 @@
                 
                 <div class="mb-3">
                     <label for="{{ form.message.id }}" class="form-label">Message</label>
-                    {{ form.message(class="form-control", rows=5, placeholder="Enter your message") }}
+                    {{ form.message(class="form-control", rows=5, placeholder="Entrez votre message") }}
                     {% if form.message.errors %}
                         <div class="invalid-feedback d-block">
                             {% for error in form.message.errors %}
@@ -77,7 +78,7 @@
                 </div>
                 
                 <div class="d-grid gap-2">
-                    {{ form.submit(class="btn btn-primary btn-lg") }}
+                    {{ form.submit(class="btn btn-primary btn-lg", value="Envoyer") }}
                 </div>
             </form>
         </div>
@@ -87,15 +88,15 @@
     <div class="col-lg-5 mb-5 fade-in">
         <div class="card mb-4">
             <div class="card-body">
-                <h2 class="h3 mb-4">Get in Touch</h2>
+                <h2 class="h3 mb-4">Nous Contacter</h2>
                 
                 <div class="contact-info-item">
                     <div class="contact-icon">
                         <i class="bi bi-geo-alt"></i>
                     </div>
                     <div>
-                        <h3 class="h6">Our Location</h3>
-                        <p class="mb-0">123 Financial District, Avenue Mohammed V<br>Casablanca, Morocco</p>
+                        <h3 class="h6">Notre Adresse</h3>
+                        <p class="mb-0">123 Quartier Financier, Avenue Mohammed V<br>Casablanca, Maroc</p>
                     </div>
                 </div>
                 
@@ -104,7 +105,7 @@
                         <i class="bi bi-envelope"></i>
                     </div>
                     <div>
-                        <h3 class="h6">Email Address</h3>
+                        <h3 class="h6">Adresse Email</h3>
                         <p class="mb-0"><a href="mailto:info@morocco-accounting.com">info@morocco-accounting.com</a></p>
                     </div>
                 </div>
@@ -114,7 +115,7 @@
                         <i class="bi bi-telephone"></i>
                     </div>
                     <div>
-                        <h3 class="h6">Phone Number</h3>
+                        <h3 class="h6">Numéro de Téléphone</h3>
                         <p class="mb-0">+212 522 123 456</p>
                     </div>
                 </div>
@@ -124,8 +125,8 @@
                         <i class="bi bi-clock"></i>
                     </div>
                     <div>
-                        <h3 class="h6">Working Hours</h3>
-                        <p class="mb-0">Monday - Friday: 9:00 AM - 5:00 PM<br>Saturday: 9:00 AM - 1:00 PM</p>
+                        <h3 class="h6">Horaires d'Ouverture</h3>
+                        <p class="mb-0">Lundi - Vendredi : 9h00 - 17h00<br>Samedi : 9h00 - 13h00</p>
                     </div>
                 </div>
             </div>
@@ -134,18 +135,18 @@
         <!-- FAQ Section -->
         <div class="card">
             <div class="card-body">
-                <h2 class="h3 mb-4">Frequently Asked Questions</h2>
+                <h2 class="h3 mb-4">Questions Fréquemment Posées</h2>
                 
                 <div class="accordion" id="contactFAQ">
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="headingOne">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                What is the response time for inquiries?
+                                Quel est le délai de réponse pour les demandes ?
                             </button>
                         </h3>
                         <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#contactFAQ">
                             <div class="accordion-body">
-                                We aim to respond to all inquiries within 24-48 business hours. For urgent matters, please call our office directly.
+                                Nous nous efforçons de répondre à toutes les demandes dans un délai de 24 à 48 heures ouvrables. Pour les questions urgentes, veuillez nous contacter par téléphone.
                             </div>
                         </div>
                     </div>
@@ -153,12 +154,12 @@
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="headingTwo">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Do you offer consultations?
+                                Proposez-vous des consultations ?
                             </button>
                         </h3>
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#contactFAQ">
                             <div class="accordion-body">
-                                Yes, we offer both virtual and in-person consultations on Moroccan accounting, taxation, and regulatory matters. Please specify your needs in your message.
+                                Oui, nous proposons des consultations virtuelles et en personne sur la comptabilité, la fiscalité et la réglementation marocaine. Veuillez préciser vos besoins dans votre message.
                             </div>
                         </div>
                     </div>
@@ -166,12 +167,12 @@
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="headingThree">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Can I request specific information not found on the site?
+                                Puis-je demander des informations spécifiques non disponibles sur le site ?
                             </button>
                         </h3>
                         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#contactFAQ">
                             <div class="accordion-body">
-                                Absolutely! We welcome requests for specific information or topics. If it's of general interest, we may even add it to our resources section.
+                                Absolument ! Nous accueillons les demandes d'informations ou de sujets spécifiques. Si cela présente un intérêt général, nous pourrons même l'ajouter à notre section ressources.
                             </div>
                         </div>
                     </div>
@@ -183,7 +184,7 @@
 
 <!-- Map Section -->
 <section class="mb-5 fade-in">
-    <h2 class="section-title mb-4">Our Location</h2>
+    <h2 class="section-title mb-4">Notre Localisation</h2>
     <div class="ratio ratio-21x9">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106376.72691587128!2d-7.679192905533038!3d33.57240323277823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7d2a35355f439%3A0x4e808bfb39a70cc7!2sCasablanca%2C%20Morocco!5e0!3m2!1sen!2sus!4v1617302724816!5m2!1sen!2sus" 
             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -194,13 +195,13 @@
 <section class="fade-in bg-light p-4 rounded mb-5">
     <div class="row align-items-center">
         <div class="col-md-7">
-            <h2 class="h4">Stay Updated</h2>
-            <p>Subscribe to our newsletter for the latest accounting and tax updates in Morocco.</p>
+            <h2 class="h4">Restez Informé</h2>
+            <p>Abonnez-vous à notre newsletter pour recevoir les dernières mises à jour comptables et fiscales au Maroc.</p>
         </div>
         <div class="col-md-5">
             <form class="d-flex">
-                <input type="email" class="form-control me-2" placeholder="Your email address" required>
-                <button type="button" class="btn btn-primary" onclick="subscribeNewsletter()">Subscribe</button>
+                <input type="email" class="form-control me-2" placeholder="Votre adresse email" required>
+                <button type="button" class="btn btn-primary" onclick="subscribeNewsletter()">S'abonner</button>
             </form>
         </div>
     </div>
@@ -212,13 +213,12 @@
     function subscribeNewsletter() {
         const emailInput = document.querySelector('input[type="email"]');
         if (!emailInput || !emailInput.value) {
-            showNotification('Please enter a valid email address', 'warning');
+            showNotification('Veuillez entrer une adresse email valide', 'warning');
             return;
         }
         
-        // Normally would submit to server, but for demo just show success message
         emailInput.value = '';
-        showNotification('Thank you for subscribing to our newsletter!', 'success');
+        showNotification('Merci de vous être abonné à notre newsletter !', 'success');
     }
 </script>
 {% endblock %}
