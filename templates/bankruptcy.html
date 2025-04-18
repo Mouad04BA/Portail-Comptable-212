@@ -1,17 +1,18 @@
+
 {% extends 'layout.html' %}
 
-{% block title %}Bankruptcy Filing Process in Morocco{% endblock %}
+{% block title %}Procédure de Faillite au Maroc{% endblock %}
 
 {% block hero %}
 <section class="hero-section">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 text-center text-lg-start">
-                <h1 class="mb-4 fade-in">Bankruptcy Filing Process</h1>
-                <p class="lead mb-4 fade-in">Complete guide to the bankruptcy filing process in Morocco with step-by-step instructions and frequently asked questions.</p>
+                <h1 class="mb-4 fade-in">Procédure de Faillite</h1>
+                <p class="lead mb-4 fade-in">Guide complet de la procédure de faillite au Maroc avec des instructions étape par étape et des questions fréquemment posées.</p>
             </div>
             <div class="col-lg-6 d-none d-lg-block text-center mt-5 mt-lg-0">
-                <img src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643" class="img-fluid hero-img rounded" alt="Bankruptcy Filing" width="500">
+                <img src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643" class="img-fluid hero-img rounded" alt="Procédure de Faillite" width="500">
             </div>
         </div>
     </div>
@@ -19,88 +20,171 @@
 {% endblock %}
 
 {% block content %}
-<!-- Process Navigation -->
+<!-- Navigation de la Procédure -->
 <div class="mb-4 fade-in">
     <nav class="nav nav-pills nav-fill">
-        <a class="nav-link active" href="#filing-process">Filing Process</a>
-        <a class="nav-link" href="#faq-section">FAQs</a>
-        <a class="nav-link" href="#resources-section">Resources</a>
+        <a class="nav-link active" href="#filing-process">Procédure de Dépôt</a>
+        <a class="nav-link" href="#faq-section">FAQ</a>
+        <a class="nav-link" href="#resources-section">Ressources</a>
     </nav>
 </div>
 
-<!-- Filing Process Section -->
+<!-- Section Procédure de Dépôt -->
 <section id="filing-process" class="mb-5">
-    <h2 class="section-title mb-4">Bankruptcy Filing Process</h2>
+    <h2 class="section-title mb-4">Procédure de Dépôt de Faillite</h2>
     
-    <p class="lead mb-4">Filing for bankruptcy in Morocco is a structured legal process governed by the Commercial Code. Below are the key steps involved in the procedure, from initial assessment to closure.</p>
+    <p class="lead mb-4">La procédure de faillite au Maroc est un processus juridique structuré régi par le Code de Commerce. Voici les étapes clés de la procédure, de l'évaluation initiale à la clôture.</p>
     
     <div class="mb-4">
         <div class="progress" style="height: 3px;">
             <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
         <div class="d-flex justify-content-between text-muted small">
-            <span>Assessment</span>
-            <span>Petition</span>
-            <span>Court Review</span>
-            <span>Implementation</span>
-            <span>Closure</span>
+            <span>Évaluation</span>
+            <span>Requête</span>
+            <span>Examen Judiciaire</span>
+            <span>Mise en œuvre</span>
+            <span>Clôture</span>
         </div>
     </div>
     
-    <!-- Steps -->
+    <!-- Étapes -->
     <div class="steps-container">
-        {% for step in process %}
-        <div class="filing-step fade-in" id="step-{{ step.step }}">
-            <h3 class="filing-step-title">Step {{ step.step }}: {{ step.title }}</h3>
-            <p>{{ step.description }}</p>
-            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#step-details-{{ step.step }}" aria-expanded="false">
-                Show Details <i class="bi bi-chevron-down"></i>
+        <!-- Étape 1 -->
+        <div class="filing-step fade-in" id="step-1">
+            <h3 class="filing-step-title">Étape 1 : Évaluation de la Situation Financière</h3>
+            <p>Effectuer une évaluation approfondie de la situation financière de l'entreprise pour déterminer si la faillite est la solution appropriée.</p>
+            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#step-details-1" aria-expanded="false">
+                Afficher les Détails <i class="bi bi-chevron-down"></i>
             </button>
-            <div class="collapse mt-3" id="step-details-{{ step.step }}">
+            <div class="collapse mt-3" id="step-details-1">
                 <div class="card card-body">
-                    {{ step.details|safe }}
+                    <p>Avant d'initier une procédure de faillite, il est essentiel d'effectuer une évaluation complète de la santé financière de l'entreprise. Cela implique :</p>
+                    <ul>
+                        <li>L'examen de tous les états financiers (bilan, compte de résultat, flux de trésorerie)</li>
+                        <li>L'analyse de la structure de la dette et des capacités de remboursement</li>
+                        <li>L'évaluation du potentiel de redressement financier</li>
+                        <li>La consultation de conseillers financiers et juridiques</li>
+                    </ul>
+                    <p>Cette évaluation aidera à déterminer si la faillite est nécessaire ou si des solutions alternatives pourraient être viables, comme la restructuration, la négociation de dettes ou les opportunités de fusion.</p>
                 </div>
             </div>
         </div>
-        {% endfor %}
+
+        <!-- Étape 2 -->
+        <div class="filing-step fade-in" id="step-2">
+            <h3 class="filing-step-title">Étape 2 : Sélection de la Procédure Appropriée</h3>
+            <p>Déterminer la procédure de faillite la plus adaptée selon la situation de l'entreprise : procédure de sauvegarde, redressement judiciaire ou liquidation judiciaire.</p>
+            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#step-details-2" aria-expanded="false">
+                Afficher les Détails <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="collapse mt-3" id="step-details-2">
+                <div class="card card-body">
+                    <p>Selon la loi marocaine, il existe trois principales procédures de faillite :</p>
+                    <ol>
+                        <li><strong>Procédure de Sauvegarde :</strong> Pour les entreprises qui ne sont pas encore en défaut de paiement mais qui font face à des difficultés qu'elles ne peuvent surmonter seules. Cette mesure préventive permet à l'entreprise de poursuivre ses activités tout en restructurant sa dette.</li>
+                        <li><strong>Redressement Judiciaire :</strong> Pour les entreprises qui sont dans l'impossibilité de payer leurs dettes mais dont la situation n'est pas irrémédiablement compromise. Cette procédure vise à permettre la poursuite des activités, maintenir l'emploi et apurer le passif.</li>
+                        <li><strong>Liquidation Judiciaire :</strong> Pour les entreprises dont la situation est irrémédiablement compromise. Cette procédure implique la cessation des activités et la vente des actifs pour payer les créanciers.</li>
+                    </ol>
+                    <p>Le choix entre ces procédures dépend de la situation financière de l'entreprise, de ses perspectives de viabilité et des circonstances spécifiques.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Étape 3 -->
+        <div class="filing-step fade-in" id="step-3">
+            <h3 class="filing-step-title">Étape 3 : Dépôt de la Requête</h3>
+            <p>Préparer et soumettre la requête de faillite au Tribunal de Commerce de la juridiction de l'entreprise.</p>
+            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#step-details-3" aria-expanded="false">
+                Afficher les Détails <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="collapse mt-3" id="step-details-3">
+                <div class="card card-body">
+                    <p>Le dépôt d'une requête de faillite nécessite la préparation minutieuse de documents spécifiques :</p>
+                    <ul>
+                        <li>Requête formelle signée par le représentant légal ou le mandataire autorisé</li>
+                        <li>Certificat d'inscription au Registre du Commerce (de moins de 3 mois)</li>
+                        <li>Copie des statuts de l'entreprise et de leurs modifications</li>
+                        <li>États financiers des trois derniers exercices</li>
+                        <li>État des actifs et des passifs</li>
+                        <li>État des flux de trésorerie des six derniers mois</li>
+                        <li>Liste des créanciers avec les montants dus et les échéances</li>
+                        <li>Liste des employés avec leurs postes et ancienneté</li>
+                        <li>Inventaire des biens et actifs de l'entreprise</li>
+                        <li>Explication détaillée des difficultés financières et de leurs causes</li>
+                    </ul>
+                    <p>La requête doit être déposée auprès du greffe du Tribunal de Commerce de la juridiction où se trouve le siège social de l'entreprise. Les frais de dépôt doivent être payés au moment de la soumission.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Étape 4 -->
+        <div class="filing-step fade-in" id="step-4">
+            <h3 class="filing-step-title">Étape 4 : Examen par le Tribunal</h3>
+            <p>Le Tribunal de Commerce examine la requête et décide de l'ouverture ou non de la procédure de faillite.</p>
+            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#step-details-4" aria-expanded="false">
+                Afficher les Détails <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="collapse mt-3" id="step-details-4">
+                <div class="card card-body">
+                    <p>Après le dépôt de la requête, le tribunal l'examine pour déterminer si l'entreprise répond aux critères légaux de la procédure de faillite :</p>
+                    <ol>
+                        <li>Le tribunal programmera une audience initiale, généralement dans les 15 jours suivant le dépôt</li>
+                        <li>Lors de cette audience, le représentant de l'entreprise doit comparaître devant le juge pour expliquer la situation financière</li>
+                        <li>Le juge peut demander des informations ou documents supplémentaires pour évaluer correctement le cas</li>
+                        <li>Le tribunal vérifiera que l'entreprise est effectivement en état de cessation de paiements ou fait face à des difficultés insurmontables</li>
+                        <li>Sur la base de cette évaluation, le tribunal décidera d'ouvrir ou non la procédure de faillite et quelle procédure est appropriée</li>
+                    </ol>
+                    <p>Si le tribunal ouvre la procédure, il rendra un jugement qui précise le type de procédure (sauvegarde, redressement ou liquidation) et nommera les officiels nécessaires pour superviser le processus.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Étape 5 -->
+        <div class="filing-step fade-in" id="step-5">
+            <h3 class="filing-step-title">Étape 5 : Nomination des Officiels</h3>
+            <p>Le tribunal nomme un juge-commissaire, un syndic et éventuellement un représentant des créanciers.</p>
+            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#step-details-5" aria-expanded="false">
+                Afficher les Détails <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="collapse mt-3" id="step-details-5">
+                <div class="card card-body">
+                    <p>Lorsque la procédure de faillite est ouverte, le tribunal nomme plusieurs officiels pour gérer le processus :</p>
+                    <ul>
+                        <li><strong>Juge-Commissaire :</strong> Supervise la procédure, assure le respect des exigences légales et résout les litiges qui peuvent survenir pendant le processus</li>
+                        <li><strong>Syndic :</strong> Gère les opérations de l'entreprise pendant la procédure, prépare un inventaire des actifs, vérifie les créances et met en œuvre le plan de redressement ou la liquidation</li>
+                        <li><strong>Représentant des Créanciers :</strong> Dans les cas plus importants, représente les intérêts des créanciers tout au long de la procédure</li>
+                        <li><strong>Représentant des Salariés :</strong> Peut être nommé pour représenter les intérêts des employés, particulièrement concernant les salaires impayés et les licenciements potentiels</li>
+                    </ul>
+                    <p>Ces officiels jouent des rôles cruciaux pour s'assurer que la procédure de faillite est menée équitablement et conformément aux exigences légales, tout en équilibrant les intérêts de toutes les parties prenantes.</p>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
-<!-- FAQ Section -->
+<!-- Section FAQ -->
 <section id="faq-section" class="mb-5">
-    <h2 class="section-title mb-4">Frequently Asked Questions</h2>
+    <h2 class="section-title mb-4">Questions Fréquemment Posées</h2>
     
     <div class="accordion fade-in" id="bankruptcyFAQ">
-        {% for item in faq %}
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="heading{{ loop.index }}">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ loop.index }}" aria-expanded="false" aria-controls="collapse{{ loop.index }}">
-                    {{ item.question }}
-                </button>
-            </h2>
-            <div id="collapse{{ loop.index }}" class="accordion-collapse collapse" aria-labelledby="heading{{ loop.index }}" data-bs-parent="#bankruptcyFAQ">
-                <div class="accordion-body">
-                    {{ item.answer|safe }}
-                </div>
-            </div>
-        </div>
-        {% endfor %}
+        <!-- Les questions et réponses seront générées dynamiquement -->
     </div>
 </section>
 
-<!-- Resources Section -->
+<!-- Section Ressources -->
 <section id="resources-section" class="mb-5 fade-in">
-    <h2 class="section-title mb-4">Bankruptcy Resources</h2>
+    <h2 class="section-title mb-4">Ressources pour la Faillite</h2>
     
     <div class="row mb-4">
         <div class="col-md-6">
             <div class="card h-100">
                 <div class="card-body">
-                    <h3 class="h5 mb-3">Official Legal References</h3>
+                    <h3 class="h5 mb-3">Références Légales Officielles</h3>
                     <ul>
-                        <li><a href="https://www.sgg.gov.ma/" target="_blank">Moroccan Commercial Code (Book V) - Official Text</a></li>
-                        <li><a href="https://www.tribunaux.ma/" target="_blank">Commercial Courts of Morocco - Official Website</a></li>
-                        <li><a href="https://adala.justice.gov.ma/" target="_blank">Adala Justice Portal - Legal Resources</a></li>
+                        <li><a href="https://www.sgg.gov.ma/" target="_blank">Code de Commerce Marocain (Livre V) - Texte Officiel</a></li>
+                        <li><a href="https://www.tribunaux.ma/" target="_blank">Tribunaux de Commerce du Maroc - Site Officiel</a></li>
+                        <li><a href="https://adala.justice.gov.ma/" target="_blank">Portail Adala Justice - Ressources Juridiques</a></li>
                     </ul>
                 </div>
             </div>
@@ -145,15 +229,15 @@
                     <ul>
                         <li>
                             <i class="bi bi-file-earmark-pdf me-2"></i>
-                            <a href="#" onclick="showNotification('Document will be available for download after login', 'info'); return false;">Judicial Reorganization Plan Template</a>
+                            <a href="#" onclick="showNotification('Le document sera disponible après connexion', 'info'); return false;">Modèle de Plan de Redressement Judiciaire</a>
                         </li>
                         <li>
                             <i class="bi bi-file-earmark-bar-graph me-2"></i>
-                            <a href="#" onclick="showNotification('Document will be available for download after login', 'info'); return false;">Cash Flow Projection Worksheet</a>
+                            <a href="#" onclick="showNotification('Le document sera disponible après connexion', 'info'); return false;">Feuille de Calcul des Flux de Trésorerie</a>
                         </li>
                         <li>
                             <i class="bi bi-file-earmark-ruled me-2"></i>
-                            <a href="#" onclick="showNotification('Document will be available for download after login', 'info'); return false;">Employee Notice Template</a>
+                            <a href="#" onclick="showNotification('Le document sera disponible après connexion', 'info'); return false;">Modèle de Notification aux Employés</a>
                         </li>
                     </ul>
                 </div>
@@ -162,24 +246,24 @@
     </div>
 </section>
 
-<!-- Call to Action -->
+<!-- Appel à l'Action -->
 <section class="text-center my-5 py-5 bg-light rounded fade-in">
     <div class="row justify-content-center">
         <div class="col-lg-8">
-            <h2>Need Professional Assistance?</h2>
-            <p class="lead">Bankruptcy proceedings can be complex. Our network of legal and financial experts can provide guidance tailored to your situation.</p>
-            <a href="{{ url_for('contact_page') }}" class="btn btn-lg btn-primary mt-3">Contact Us</a>
+            <h2>Besoin d'Assistance Professionnelle ?</h2>
+            <p class="lead">Les procédures de faillite peuvent être complexes. Notre réseau d'experts juridiques et financiers peut vous fournir des conseils adaptés à votre situation.</p>
+            <a href="{{ url_for('contact_page') }}" class="btn btn-lg btn-primary mt-3">Nous Contacter</a>
         </div>
     </div>
 </section>
 
-<!-- Legal Disclaimer -->
+<!-- Avertissement Légal -->
 <section class="mb-5 fade-in">
     <div class="alert alert-warning">
-        <h4 class="alert-heading">Legal Disclaimer</h4>
-        <p>The information provided on this page is for general informational purposes only and should not be considered as legal advice. Bankruptcy laws in Morocco are complex and may change over time. We strongly recommend consulting with a qualified legal professional for advice specific to your situation.</p>
+        <h4 class="alert-heading">Avertissement Légal</h4>
+        <p>Les informations fournies sur cette page sont uniquement à titre informatif général et ne doivent pas être considérées comme un avis juridique. Les lois sur la faillite au Maroc sont complexes et peuvent évoluer au fil du temps. Nous vous recommandons fortement de consulter un professionnel juridique qualifié pour des conseils spécifiques à votre situation.</p>
         <hr>
-        <p class="mb-0">This content was last updated: January 2023</p>
+        <p class="mb-0">Ce contenu a été mis à jour pour la dernière fois : Janvier 2023</p>
     </div>
 </section>
 {% endblock %}
@@ -203,7 +287,7 @@
                 
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    const headerOffset = 100; // Adjust based on your fixed header height
+                    const headerOffset = 100;
                     const elementPosition = targetElement.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
                     
