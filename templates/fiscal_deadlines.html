@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 
-{% block title %}Moroccan Fiscal Deadlines{% endblock %}
+{% block title %}Échéances Fiscales Marocaines{% endblock %}
 
 {% block extra_css %}
 <style>
@@ -92,11 +92,11 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 text-center text-lg-start">
-                <h1 class="mb-4 fade-in">Fiscal Deadlines</h1>
-                <p class="lead mb-4 fade-in">Stay updated with all important tax deadlines for IS, IR, and TVA with visual reminders and detailed information.</p>
+                <h1 class="mb-4 fade-in">Échéances Fiscales</h1>
+                <p class="lead mb-4 fade-in">Restez à jour avec toutes les échéances fiscales importantes pour l'IS, l'IR et la TVA avec des rappels visuels et des informations détaillées.</p>
             </div>
             <div class="col-lg-6 d-none d-lg-block text-center mt-5 mt-lg-0">
-                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40" class="img-fluid hero-img rounded" alt="Financial Calendar" width="500">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40" class="img-fluid hero-img rounded" alt="Calendrier Financier" width="500">
             </div>
         </div>
     </div>
@@ -108,11 +108,11 @@
 <section class="mb-5">
     <div class="row mb-4">
         <div class="col-md-8">
-            <h2 class="section-title">Tax Deadlines Overview</h2>
+            <h2 class="section-title">Aperçu des Échéances Fiscales</h2>
         </div>
         <div class="col-md-4">
-            <div class="btn-group w-100 mb-3" role="group" aria-label="Deadline filters">
-                <button type="button" class="btn btn-outline-primary deadline-filter active" data-filter="all">All</button>
+            <div class="btn-group w-100 mb-3" role="group" aria-label="Filtres d'échéances">
+                <button type="button" class="btn btn-outline-primary deadline-filter active" data-filter="all">Tous</button>
                 <button type="button" class="btn btn-outline-success deadline-filter" data-filter="is">IS</button>
                 <button type="button" class="btn btn-outline-danger deadline-filter" data-filter="ir">IR</button>
                 <button type="button" class="btn btn-outline-warning deadline-filter" data-filter="tva">TVA</button>
@@ -128,14 +128,14 @@
                         <span class="feature-icon" style="width: 2rem; height: 2rem; font-size: 1rem;">
                             <i class="bi bi-building"></i>
                         </span>
-                        Corporate Tax (IS)
+                        Impôt sur les Sociétés (IS)
                     </h3>
-                    <p>Corporate Income Tax (Impôt sur les Sociétés) is applied to companies' profits. Key deadlines include:</p>
+                    <p>L'Impôt sur les Sociétés s'applique aux bénéfices des entreprises. Les échéances clés comprennent:</p>
                     <ul>
-                        <li>Annual return filing (March 31)</li>
-                        <li>Quarterly installments (March, June, September, December)</li>
+                        <li>Déclaration annuelle (31 mars)</li>
+                        <li>Acomptes trimestriels (mars, juin, septembre, décembre)</li>
                     </ul>
-                    <p class="small text-muted">Corporate tax rates vary from 10% to 31% depending on the company's net profit.</p>
+                    <p class="small text-muted">Les taux d'IS varient de 10% à 31% selon le bénéfice net de l'entreprise.</p>
                 </div>
             </div>
         </div>
@@ -147,15 +147,15 @@
                         <span class="feature-icon" style="width: 2rem; height: 2rem; font-size: 1rem; background-color: var(--primary-red);">
                             <i class="bi bi-person"></i>
                         </span>
-                        Income Tax (IR)
+                        Impôt sur le Revenu (IR)
                     </h3>
-                    <p>Personal Income Tax (Impôt sur le Revenu) applies to individuals and sole proprietorships. Key deadlines include:</p>
+                    <p>L'Impôt sur le Revenu s'applique aux particuliers et aux entreprises individuelles. Les échéances clés comprennent:</p>
                     <ul>
-                        <li>Annual return filing (March 31)</li>
-                        <li>Monthly salary withholdings (end of each month)</li>
-                        <li>Quarterly payments for professional income</li>
+                        <li>Déclaration annuelle (31 mars)</li>
+                        <li>Retenues mensuelles sur salaires (fin de chaque mois)</li>
+                        <li>Paiements trimestriels pour les revenus professionnels</li>
                     </ul>
-                    <p class="small text-muted">Income tax rates are progressive, ranging from 0% to 38% depending on income level.</p>
+                    <p class="small text-muted">Les taux d'IR sont progressifs, allant de 0% à 38% selon le niveau de revenu.</p>
                 </div>
             </div>
         </div>
@@ -167,14 +167,14 @@
                         <span class="feature-icon" style="width: 2rem; height: 2rem; font-size: 1rem; background-color: var(--accent-gold);">
                             <i class="bi bi-receipt"></i>
                         </span>
-                        Value Added Tax (TVA)
+                        Taxe sur la Valeur Ajoutée (TVA)
                     </h3>
-                    <p>Value Added Tax (Taxe sur la Valeur Ajoutée) is collected on the sale of goods and services. Key deadlines include:</p>
+                    <p>La Taxe sur la Valeur Ajoutée est prélevée sur la vente de biens et services. Les échéances clés comprennent:</p>
                     <ul>
-                        <li>Monthly filing for companies with turnover > 1M MAD</li>
-                        <li>Quarterly filing for companies with turnover < 1M MAD</li>
+                        <li>Déclaration mensuelle pour les entreprises avec un chiffre d'affaires > 1M MAD</li>
+                        <li>Déclaration trimestrielle pour les entreprises avec un chiffre d'affaires < 1M MAD</li>
                     </ul>
-                    <p class="small text-muted">Standard TVA rate is 20%, with reduced rates of 14%, 10%, and 7% for specific goods and services.</p>
+                    <p class="small text-muted">Le taux standard de TVA est de 20%, avec des taux réduits de 14%, 10% et 7% pour certains biens et services spécifiques.</p>
                 </div>
             </div>
         </div>
@@ -187,22 +187,22 @@
     
     <!-- Detailed Deadlines List -->
     <div class="mb-5 fade-in">
-        <h2 class="section-title mb-4">Detailed Deadlines</h2>
+        <h2 class="section-title mb-4">Échéances Détaillées</h2>
         
         <div id="no-deadlines-message" style="display: none;" class="alert alert-info">
-            No deadlines match your filter criteria.
+            Aucune échéance ne correspond à vos critères de filtrage.
         </div>
         
         <div class="table-responsive">
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>Tax Type</th>
-                        <th>Deadline Name</th>
-                        <th>Due Date</th>
+                        <th>Type d'Impôt</th>
+                        <th>Nom de l'Échéance</th>
+                        <th>Date d'Échéance</th>
                         <th>Description</th>
-                        <th>Category</th>
-                        <th>Payment</th>
+                        <th>Catégorie</th>
+                        <th>Paiement</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -222,9 +222,9 @@
                         <td><span class="badge bg-secondary">{{ deadline.category }}</span></td>
                         <td>
                             {% if deadline.payment_required %}
-                            <i class="bi bi-cash text-success" title="Payment required"></i>
+                            <i class="bi bi-cash text-success" title="Paiement requis"></i>
                             {% else %}
-                            <i class="bi bi-file-text" title="Filing only"></i>
+                            <i class="bi bi-file-text" title="Déclaration uniquement"></i>
                             {% endif %}
                         </td>
                     </tr>
@@ -236,18 +236,18 @@
     
     <!-- Tax Compliance Tips -->
     <section class="mb-5 fade-in">
-        <h2 class="section-title mb-4">Tax Compliance Tips</h2>
+        <h2 class="section-title mb-4">Conseils de Conformité Fiscale</h2>
         <div class="row">
             <div class="col-md-6">
                 <div class="card mb-4">
                     <div class="card-body">
-                        <h3 class="h5 mb-3">Filing Best Practices</h3>
+                        <h3 class="h5 mb-3">Meilleures Pratiques de Déclaration</h3>
                         <ul>
-                            <li>Start preparing your returns at least 2 weeks before the deadline</li>
-                            <li>Keep all supporting documents organized and readily accessible</li>
-                            <li>Consider using the DGI's online SIMPL platform for electronic filing</li>
-                            <li>Reconcile your accounting records before filing to avoid discrepancies</li>
-                            <li>Double-check all calculations and ensure consistency across different tax returns</li>
+                            <li>Commencez à préparer vos déclarations au moins 2 semaines avant l'échéance</li>
+                            <li>Gardez tous les documents justificatifs organisés et facilement accessibles</li>
+                            <li>Envisagez d'utiliser la plateforme en ligne SIMPL de la DGI pour les déclarations électroniques</li>
+                            <li>Rapprochez vos documents comptables avant de déposer pour éviter les écarts</li>
+                            <li>Vérifiez tous les calculs et assurez la cohérence entre les différentes déclarations fiscales</li>
                         </ul>
                     </div>
                 </div>
@@ -255,13 +255,13 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="h5 mb-3">Avoiding Common Mistakes</h3>
+                        <h3 class="h5 mb-3">Éviter les Erreurs Courantes</h3>
                         <ul>
-                            <li>Missing filing deadlines (which can result in penalties from 5% to 15%)</li>
-                            <li>Incorrect classification of expenses as deductible or non-deductible</li>
-                            <li>Failure to maintain proper documentation for at least 10 years</li>
-                            <li>Inconsistency between different tax declarations (IS, TVA, etc.)</li>
-                            <li>Forgetting to account for recent tax law changes</li>
+                            <li>Manquer les délais de déclaration (ce qui peut entraîner des pénalités de 5% à 15%)</li>
+                            <li>Classification incorrecte des dépenses comme déductibles ou non déductibles</li>
+                            <li>Défaut de conserver la documentation appropriée pendant au moins 10 ans</li>
+                            <li>Incohérence entre les différentes déclarations fiscales (IS, TVA, etc.)</li>
+                            <li>Oublier de prendre en compte les récentes modifications de la législation fiscale</li>
                         </ul>
                     </div>
                 </div>
