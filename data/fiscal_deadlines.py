@@ -15,19 +15,19 @@ def get_all_deadlines():
     is_deadlines = [
         {
             "tax_type": "IS",
-            "name": "Corporate Tax (IS) - Annual Return Filing",
-            "description": "Filing of annual corporate tax return for non-calendar fiscal years",
+            "name": "Impôt sur les Sociétés (IS) - Déclaration Annuelle",
+            "description": "Dépôt de la déclaration annuelle de l'impôt sur les sociétés pour les exercices non-calendaires",
             "due_date": f"{current_year}-03-31",
-            "details": "Companies with a fiscal year ending December 31 must file their annual corporate tax return by March 31 of the following year.",
+            "details": "Les sociétés dont l'exercice se termine le 31 décembre doivent déposer leur déclaration annuelle d'IS avant le 31 mars de l'année suivante.",
             "category": "annual",
             "payment_required": True
         },
         {
             "tax_type": "IS",
-            "name": "Corporate Tax (IS) - First Installment",
-            "description": "First quarterly installment payment for corporate tax",
+            "name": "Impôt sur les Sociétés (IS) - Premier Acompte",
+            "description": "Premier acompte trimestriel de l'impôt sur les sociétés",
             "due_date": f"{current_year}-03-31",
-            "details": "Companies must pay the first installment of corporate tax by March 31.",
+            "details": "Les sociétés doivent payer le premier acompte de l'IS avant le 31 mars.",
             "category": "quarterly",
             "payment_required": True
         },
@@ -95,19 +95,19 @@ def get_all_deadlines():
     tva_deadlines = [
         {
             "tax_type": "TVA",
-            "name": "Value Added Tax (TVA) - Monthly Filing",
-            "description": "Monthly VAT return filing for companies with annual turnover exceeding MAD 1 million",
-            "due_date": "Monthly (End of following month)",
-            "details": "Companies with annual turnover exceeding MAD 1 million must file their VAT returns and make payment by the end of the month following the tax period.",
+            "name": "Taxe sur la Valeur Ajoutée (TVA) - Déclaration Mensuelle",
+            "description": "Déclaration mensuelle de TVA pour les entreprises dont le chiffre d'affaires dépasse 1 million de MAD",
+            "due_date": "Mensuel (Fin du mois suivant)",
+            "details": "Les entreprises dont le chiffre d'affaires dépasse 1 million de MAD doivent déposer leurs déclarations de TVA et effectuer le paiement avant la fin du mois suivant la période d'imposition.",
             "category": "monthly",
             "payment_required": True
         },
         {
             "tax_type": "TVA",
-            "name": "Value Added Tax (TVA) - Quarterly Filing",
-            "description": "Quarterly VAT return filing for companies with annual turnover less than MAD 1 million",
-            "due_date": "Quarterly (End of following month)",
-            "details": "Companies with annual turnover less than MAD 1 million can opt for quarterly VAT filing, due by the end of the month following the quarter.",
+            "name": "Taxe sur la Valeur Ajoutée (TVA) - Déclaration Trimestrielle",
+            "description": "Déclaration trimestrielle de TVA pour les entreprises dont le chiffre d'affaires est inférieur à 1 million de MAD",
+            "due_date": "Trimestriel (Fin du mois suivant)",
+            "details": "Les entreprises dont le chiffre d'affaires est inférieur à 1 million de MAD peuvent opter pour une déclaration trimestrielle de TVA, à déposer avant la fin du mois suivant le trimestre.",
             "category": "quarterly",
             "payment_required": True
         }
@@ -123,10 +123,10 @@ def get_all_deadlines():
         
         monthly_tva.append({
             "tax_type": "TVA",
-            "name": f"Value Added Tax (TVA) - {calendar.month_name[month]} Filing",
-            "description": f"Monthly VAT return for {calendar.month_name[month]} {current_year}",
+            "name": f"Taxe sur la Valeur Ajoutée (TVA) - Déclaration {calendar.month_name[month]}",
+            "description": f"Déclaration mensuelle de TVA pour {calendar.month_name[month]} {current_year}",
             "due_date": f"{next_year}-{next_month:02d}-{next_month_last_day}",
-            "details": f"File VAT return and make payment for {calendar.month_name[month]} {current_year}",
+            "details": f"Déposer la déclaration de TVA et effectuer le paiement pour {calendar.month_name[month]} {current_year}",
             "category": "monthly",
             "payment_required": True
         })
