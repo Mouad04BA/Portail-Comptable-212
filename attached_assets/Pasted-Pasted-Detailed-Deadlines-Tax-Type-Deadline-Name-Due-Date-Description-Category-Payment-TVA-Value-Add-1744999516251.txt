@@ -1,0 +1,38 @@
+Pasted-Detailed-Deadlines-Tax-Type-Deadline-Name-Due-Date-Description-Category-Payment-TVA-Value-Added-Ta-1744998955487.txt
+Detailed Deadlines
+Tax Type	Deadline Name	Due Date	Description	Category	Payment
+TVA	Value Added Tax (TVA) - January Filing	2025-02-28 Passé	Monthly VAT return for January 2025	monthly	
+IS	Corporate Tax (IS) - Annual Return Filing	2025-03-31 Passé	Filing of annual corporate tax return for non-calendar fiscal years	annual	
+IS	Corporate Tax (IS) - First Installment	2025-03-31 Passé	First quarterly installment payment for corporate tax	quarterly	
+IR	Income Tax (IR) - Annual Return Filing	2025-03-31 Passé	Filing of annual income tax return for individuals	annual	
+TVA	Value Added Tax (TVA) - February Filing	2025-03-31 Passé	Monthly VAT return for February 2025	monthly	
+TVA	Value Added Tax (TVA) - March Filing	2025-04-30 12 jours	Monthly VAT return for March 2025	monthly	
+TVA	Value Added Tax (TVA) - April Filing	2025-05-31 43 jours	Monthly VAT return for April 2025	monthly	
+IS	Corporate Tax (IS) - Second Installment	2025-06-30 73 jours	Second quarterly installment payment for corporate tax	quarterly	
+TVA	Value Added Tax (TVA) - May Filing	2025-06-30 73 jours	Monthly VAT return for May 2025	monthly	
+TVA	Value Added Tax (TVA) - June Filing	2025-07-31 104 jours	Monthly VAT return for June 2025	monthly	
+TVA	Value Added Tax (TVA) - July Filing	2025-08-31 135 jours	Monthly VAT return for July 2025	monthly	
+IS	Corporate Tax (IS) - Third Installment	2025-09-30 165 jours	Third quarterly installment payment for corporate tax	quarterly	
+TVA	Value Added Tax (TVA) - August Filing	2025-09-30 165 jours	Monthly VAT return for August 2025	monthly	
+TVA	Value Added Tax (TVA) - September Filing	2025-10-31 196 jours	Monthly VAT return for September 2025	monthly	
+TVA	Value Added Tax (TVA) - October Filing	2025-11-30 226 jours	Monthly VAT return for October 2025	monthly	
+IS	Corporate Tax (IS) - Fourth Installment	2025-12-31 257 jours	Fourth quarterly installment payment for corporate tax	quarterly	
+TVA	Value Added Tax (TVA) - November Filing	2025-12-31 257 jours	Monthly VAT return for November 2025	monthly	
+TVA	Value Added Tax (TVA) - December Filing	2026-01-31 288 jours	Monthly VAT return for December 2025	monthly	
+IR	Income Tax (IR) - Monthly Withholding	Monthly (End of month)	Monthly withholding tax on salaries and wages	monthly	
+IR	Income Tax (IR) - Professional Income	Quarterly (Mar 31, Jun 30, Sep 30, Dec 31)	Quarterly installment payments for professional income	quarterly	
+TVA	Value Added Tax (TVA) - Monthly Filing	Monthly (End of following month)	Monthly VAT return filing for companies with annual turnover exceeding MAD 1 million	monthly	
+TVA	Value Added Tax (TVA) - Quarterly Filing	Quarterly (End of following month)	Quarterly VAT return filing for companies with annual turnover less than MAD 1 million	quarterly	
+Tax Compliance Tips
+Filing Best Practices
+Start preparing your returns at least 2 weeks before the deadline
+Keep all supporting documents organized and readily accessible
+Consider using the DGI's online SIMPL platform for electronic filing
+Reconcile your accounting records before filing to avoid discrepancies
+Double-check all calculations and ensure consistency across different tax returns
+Avoiding Common Mistakes
+Missing filing deadlines (which can result in penalties from 5% to 15%)
+Incorrect classification of expenses as deductible or non-deductible
+Failure to maintain proper documentation for at least 10 years
+Inconsistency between different tax declarations (IS, TVA, etc.)
+Forgetting to account for recent tax law changes
