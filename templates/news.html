@@ -25,16 +25,17 @@
         <div class="col-md-6">
             <div class="input-group mb-3">
                 <span class="input-group-text"><i class="bi bi-search"></i></span>
-                <input type="text" class="form-control" id="news-search" placeholder="Search news...">
+                <input type="text" class="form-control" id="news-search" placeholder="Rechercher...">
             </div>
         </div>
         <div class="col-md-6">
-            <div class="btn-group w-100" role="group" aria-label="News category filter">
-                <button type="button" class="btn btn-outline-primary active" data-filter="all">All</button>
-                <button type="button" class="btn btn-outline-primary" data-filter="tax">Tax</button>
-                <button type="button" class="btn btn-outline-primary" data-filter="banking">Banking</button>
-                <button type="button" class="btn btn-outline-primary" data-filter="accounting">Accounting</button>
-                <button type="button" class="btn btn-outline-primary" data-filter="economy">Economy</button>
+            <div class="btn-group w-100" role="group" aria-label="Filtres par catégorie">
+                <button type="button" class="btn btn-outline-primary active" data-filter="all">Tout</button>
+                <button type="button" class="btn btn-outline-primary" data-filter="fiscalité">Fiscalité</button>
+                <button type="button" class="btn btn-outline-primary" data-filter="banque">Banque</button>
+                <button type="button" class="btn btn-outline-primary" data-filter="comptabilité">Comptabilité</button>
+                <button type="button" class="btn btn-outline-primary" data-filter="finance">Finance</button>
+                <button type="button" class="btn btn-outline-primary" data-filter="entreprise">Entreprise</button>
             </div>
         </div>
     </div>
@@ -58,7 +59,7 @@
                             <p class="news-date"><i class="bi bi-calendar"></i> {{ featured.date }}</p>
                             <p class="card-text">{{ featured.summary }}</p>
                             <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#featured-content" aria-expanded="false" aria-controls="featured-content">
-                                Read More
+                                Lire la suite
                             </button>
                             <div class="collapse mt-3" id="featured-content">
                                 <div class="card card-body">
@@ -74,10 +75,10 @@
         </div>
         
         <div class="col-lg-4">
-            <h3 class="h5 mb-3">News Categories</h3>
+            <h3 class="h5 mb-3">Catégories</h3>
             <div class="list-group mb-4 fade-in">
                 <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center active" data-filter="all">
-                    All Categories
+                    Toutes les catégories
                     <span class="badge bg-primary rounded-pill">{{ news_items|length }}</span>
                 </a>
                 {% set categories = news_items|map(attribute='category')|list|unique %}
@@ -89,13 +90,13 @@
                 {% endfor %}
             </div>
             
-            <h3 class="h5 mb-3">Archive</h3>
+            <h3 class="h5 mb-3">Archives</h3>
             <div class="list-group fade-in">
                 {% set dates = news_items|map(attribute='date')|list|unique %}
                 {% for date_str in dates %}
                 <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" data-filter-date="{{ date_str }}">
                     {{ date_str }}
-                    <span class="badge bg-secondary rounded-pill">{{ news_items|selectattr('date', 'startswith', date_str[:7])|list|length }}</span>
+                    <span class="badge bg-secondary rounded-pill">{{ news_items|selectattr('date', 'equalto', date_str)|list|length }}</span>
                 </a>
                 {% endfor %}
             </div>
@@ -106,10 +107,10 @@
 
 <!-- All News Articles -->
 <section class="mb-5">
-    <h2 class="section-title mb-4">All News</h2>
+    <h2 class="section-title mb-4">Toutes les Actualités</h2>
     
     <div id="no-news-message" style="display: none;" class="alert alert-info">
-        No news articles match your search criteria.
+        Aucun article ne correspond à vos critères de recherche.
     </div>
     
     <div class="row g-4">
@@ -123,7 +124,7 @@
                     <p class="news-date"><i class="bi bi-calendar"></i> {{ news_item.date }}</p>
                     <p class="card-text">{{ news_item.summary }}</p>
                     <button class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#news-content-{{ news_item.id }}" aria-expanded="false" aria-controls="news-content-{{ news_item.id }}">
-                        Read More
+                        Lire la suite
                     </button>
                     <div class="collapse mt-3" id="news-content-{{ news_item.id }}">
                         <div class="card card-body">
@@ -133,7 +134,7 @@
                     </div>
                 </div>
                 <div class="card-footer text-muted">
-                    <small>Published: {{ news_item.date }}</small>
+                    <small>Publié le: {{ news_item.date }}</small>
                 </div>
             </div>
         </div>
@@ -145,13 +146,13 @@
 <section class="bg-light p-4 rounded fade-in mb-5">
     <div class="row align-items-center">
         <div class="col-md-7">
-            <h2 class="h4">Subscribe to Our Newsletter</h2>
-            <p>Get the latest financial and economic updates delivered directly to your inbox.</p>
+            <h2 class="h4">Abonnez-vous à notre Newsletter</h2>
+            <p>Recevez les dernières actualités économiques et financières directement dans votre boîte mail.</p>
         </div>
         <div class="col-md-5">
             <form id="newsletter-form" class="d-flex">
-                <input type="email" class="form-control me-2" placeholder="Your email" required>
-                <button type="button" class="btn btn-primary" onclick="subscribeNewsletter()">Subscribe</button>
+                <input type="email" class="form-control me-2" placeholder="Votre email" required>
+                <button type="button" class="btn btn-primary" onclick="subscribeNewsletter()">S'abonner</button>
             </form>
         </div>
     </div>
@@ -265,7 +266,7 @@
         
         // Normally would submit to server, but for demo just show success message
         emailInput.value = '';
-        showNotification('Thank you for subscribing to our newsletter!', 'success');
+        showNotification('Merci de vous être abonné à notre newsletter !', 'success');
     }
 </script>
 {% endblock %}
