@@ -1,0 +1,236 @@
+{% extends "layout.html" %}
+
+{% block title %}Portail Comptable Marocain - Accueil{% endblock %}
+
+{% block hero %}
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 text-center text-lg-start">
+                <h1 class="mb-4 fade-in">Portail d'Information Comptable Marocain</h1>
+                <p class="lead mb-4 fade-in">Votre ressource complète pour les normes comptables marocaines, les échéances fiscales et les informations financières.</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start fade-in">
+                    <a href="{{ url_for('chart_accounts_page') }}"
+                        class="btn btn-primary btn-lg px-4 me-md-2">Plan Comptable</a>
+                    <a href="{{ url_for('fiscal_deadlines_page') }}"
+                        class="btn btn-outline-light btn-lg px-4">Calendrier
+                        Fiscal</a>
+
+                </div>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block text-center mt-5 mt-lg-0">
+                <img src="https://images.unsplash.com/photo-1458682625221-3a45f8a844c7" class="img-fluid hero-img rounded" alt="Architecture Marocaine" width="500">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<!-- Section Services Vedettes -->
+<section class="mb-5">
+    <h2 class="section-title mb-4">Services Principaux</h2>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 fade-in">
+                <div class="card-body text-center">
+                    <div class="feature-icon mx-auto"> <i class="bi bi-journal-text"></i></div>
+                    <h3 class="card-title h5">Plan Comptable Marocain</h3>
+                    <p class="card-text">Accès complet aux 7 classes du plan comptable marocain avec descriptions
+                        détaillées et
+                        structure.
+
+
+                    </p>
+                    <a href="{{ url_for('chart_accounts_page') }}" class="btn btn-outline-primary mt-2">Explorer</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 fade-in">
+                <div class="card-body text-center">
+                    <div class="feature-icon mx-auto">
+                        <i class="bi bi-calendar-check"></i>
+                    </div>
+                    <h3 class="card-title h5">Échéances Fiscales</h3>
+                    <p class="card-text">Restez informé de toutes les échéances fiscales importantes pour l'IS, l'IR et la
+                        TVA avec des rappels visuels et des informations détaillées.
+                    </p>
+                    <a href="{{ url_for('fiscal_deadlines_page') }}" class="btn btn-outline-primary mt-2">Voir le Calendrier</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 fade-in">
+                <div class="card-body text-center">
+                    <div class="feature-icon mx-auto">
+                        <i class="bi bi-file-earmark-text"></i>
+                    </div>
+                    <h3 class="card-title h5">Guide de Procédure de Faillite</h3>
+                    <p class="card-text">Guide étape par étape sur la procédure de dépôt de faillite au Maroc, avec FAQ complète.</p>
+                    <a href="{{ url_for('bankruptcy_page') }}" class="btn btn-outline-primary mt-2">En Savoir Plus</a>
+                </div>    
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section Éléments 3D -->
+<section class="mb-5">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <h2 class="section-title">Ressources Comptables Complètes</h2>
+            <p class="lead">Notre plateforme rassemble les informations essentielles dont ont besoin les
+                professionnels de la
+                comptabilité, les chefs d'entreprise et les étudiants au Maroc.</p>
+            <p>Accédez à des guides détaillés, des calendriers fiscaux à jour et les dernières actualités
+                financières — tous
+                conçus pour vous aider à naviguer dans le paysage comptable marocain en toute confiance.
+            </p>
+            <a href="{{ url_for('resources_page') }}" class="btn btn-primary mt-3">Explorer les Ressources</a>
+        </div>
+        <div class="col-md-6 text-center">
+            <div class="scene">
+                <div class="cube">
+                    <div class="cube-face cube-face-front">Plan<br>Comptable</div>
+                    <div class="cube-face cube-face-back">TVA</div>
+                    <div class="cube-face cube-face-right">IS</div>
+                    <div class="cube-face cube-face-left">IR</div>
+                    <div class="cube-face cube-face-top">Fiscal</div>
+                    <div class="cube-face cube-face-bottom">Légal</div>        
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section Dernières Actualités -->
+<section class="mb-5">
+    <h2 class="section-title mb-4">Dernières Actualités Financières</h2>
+    <div class="row g-4">
+        {% for news_item in latest_news %}
+        <div class="col-md-4">        
+            <div class="card news-card fade-in">
+                <img src="{{ news_item.image_url }}" class="card-img-top" alt="{{ news_item.title }}">
+                <div class="card-body">
+                    <span class="news-category">{{ news_item.category }}</span>
+                    <h3 class="card-title h5">{{ news_item.title }}</h3>
+                    <p class="news-date"><i class="bi bi-calendar"></i> {{ news_item.date }}
+                    </p>
+                    <p class="card-text">{{ news_item.summary }}</p>
+                    <a href="{{ url_for('news_page') }}#news-{{ news_item.id }}"
+                        class="btn btn-sm btn-outline-secondary">Lire
+                        Plus</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="text-center mt-4">
+        <a href="{{ url_for('news_page') }}" class="btn btn-primary">Voir Toutes les Actualités</a>
+    </div>
+</section>
+
+<!-- Échéances à Venir -->
+<section class="mb-5">
+    <h2 class="section-title mb-4">Prochaines Échéances Fiscales</h2>
+    <div class="calendar-container fade-in">
+        <div class="row">
+            {% for deadline in upcoming_deadlines %}
+            <div class="col-md-4 mb-3">
+                <div class="deadline-item deadline-{{ deadline.tax_type|lower }}" data-tax-type="{{ deadline.tax_type }}">
+                    <div class="d-flex justify-content-between align-items-start"><div>
+                            <h3 class="h6 deadline-title">{{ deadline.name }}</h3>    
+                                <p class="deadline-date mb-1">
+                                    <i class="bi bi-calendar-check"></i>
+                                    {% if deadline.due_date|length == 10 %}
+                                    {{ deadline.due_date|replace('-', '/') }}
+                                    {% else %}
+                                    {{ deadline.due_date }}
+                                    {% endif %}
+                                </p>
+                                </div>
+                            {% if deadline.due_date|length == 10 %}
+                            <span data-countdown="{{ deadline.due_date }}" class="badge bg-primary countdown"></span>
+                            {% endif %}
+                       
+                    </div>
+                    <small>{{ deadline.description }}
+
+                    </small>
+
+                    
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="text-center mt-3">
+            <a href="{{ url_for('fiscal_deadlines_page') }}" class="btn btn-outline-primary">Voir le Calendrier Complet</a>
+        </div>
+    </div>
+</section>
+
+<!-- Appel à l'Action -->
+<section class="text-center mb-5 py-5 bg-light rounded fade-in">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h2>Besoin d'Informations Comptables Spécifiques?</h2>
+            <p class="lead">Contactez-nous avec vos questions sur les normes comptables marocaines, les procédures
+                fiscales ou
+                les réglementations financières.</p>
+            <a href="{{ url_for('contact_page') }}" class="btn btn-lg btn-primary mt-3">Nous Contacter</a>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
+
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize countdown for upcoming deadlines
+        const countdownElements = document.querySelectorAll('[data-countdown]');
+        
+        countdownElements.forEach(element => {    
+            const targetDateStr = element.getAttribute('data-countdown');
+            if (!targetDateStr) return;
+            
+            const targetDate = new Date(targetDateStr);        
+            
+            // Update countdown immediately
+            updateCountdown(element, targetDate);
+        });    
+        
+        function updateCountdown(element, targetDate) {
+            const now = new Date();
+            
+            // Calculate difference in days    
+            const diffTime = targetDate - now;
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            
+            // Update element content    
+            if (diffDays > 0) {
+                element.textContent = `${diffDays} jours`;
+                
+                // Add urgency classes    
+                if (diffDays <= 7) {
+                    element.className = 'badge bg-danger countdown';
+                } else if (diffDays <= 30) {
+                    element.className = 'badge bg-warning text-dark countdown';
+                } else {
+                    element.className = 'badge bg-primary countdown';    
+                }
+            } else if (diffDays === 0) {
+                element.textContent = 'Aujourd\'hui!';
+                element.className = 'badge bg-danger countdown';
+            } else {    
+                element.textContent = 'Passé';
+                element.className = 'badge bg-secondary countdown';
+            }
+        }
+    });
+</script>
+{% endblock %}
