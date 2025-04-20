@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="fr" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portail Comptable Marocain - Accueil</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts: Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #006837;
+            --primary-dark: #004d29;
+            --primary-light: #4c9370;
+            --primary-red: #d9534f;
+            --accent-gold: #d4af37;
+            --secondary-bg: #f8f9fa;
+            --text-color: #212529;
+            --text-muted: #6c757d;
+            --light-border: #dee2e6;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            background-color: #fff;
+        }
+        
+        .navbar {
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: white !important;
+        }
+        
+        .nav-link {
+            color: rgba(255,255,255,0.9) !important;
+            font-weight: 500;
+        }
+        
+        .nav-link:hover {
+            color: white !important;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 6rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-img {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .hero-img:hover {
+            transform: translateY(-5px);
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 0.75rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-gold);
+        }
+        
+        .feature-icon {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            background-color: var(--primary-light);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover .feature-icon {
+            transform: scale(1.1);
+        }
+        
+        .card {
+            border: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        
+        .news-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .news-category {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 30px;
+            background-color: var(--accent-gold);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        
+        .news-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+        
+        .deadline-item {
+            background-color: var(--secondary-bg);
+            border-left: 5px solid;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+        
+        .deadline-is {
+            border-left-color: var(--primary-color);
+        }
+        
+        .deadline-ir {
+            border-left-color: var(--primary-red);
+        }
+        
+        .deadline-tva {
+            border-left-color: var(--accent-gold);
+        }
+        
+        footer {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .footer-link {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        .footer-link:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            margin-right: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 0.5s ease-in forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .scene {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            perspective: 1000px;
+        }
+        
+        .cube {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotateCube 20s infinite linear;
+        }
+        
+        .cube-face {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+        }
+        
+        .cube-face-front {
+            background-color: var(--primary-color);
+            transform: translateZ(150px);
+        }
+        
+        .cube-face-back {
+            background-color: var(--primary-light);
+            transform: rotateY(180deg) translateZ(150px);
+        }
+        
+        .cube-face-right {
+            background-color: var(--primary-red);
+            transform: rotateY(90deg) translateZ(150px);
+        }
+        
+        .cube-face-left {
+            background-color: var(--accent-gold);
+            transform: rotateY(-90deg) translateZ(150px);
+        }
+        
+        .cube-face-top {
+            background-color: var(--primary-dark);
+            transform: rotateX(90deg) translateZ(150px);
+        }
+        
+        .cube-face-bottom {
+            background-color: var(--text-muted);
+            transform: rotateX(-90deg) translateZ(150px);
+        }
+        
+        @keyframes rotateCube {
+            from { transform: rotateX(0) rotateY(0); }
+            to { transform: rotateX(360deg) rotateY(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-book"></i> Portail Comptable Marocain
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Basculer la navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Plan Comptable</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Échéances Fiscales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Actualités</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Procédure de Faillite</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Ressources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <h1 class="mb-4 fade-in">Portail d'Information Comptable Marocain</h1>
+                        <p class="lead mb-4 fade-in">Votre ressource complète pour les normes comptables marocaines, les échéances fiscales et les informations financières.</p>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-start fade-in">
+                            <a href="#" class="btn btn-primary btn-lg px-4 me-md-2">Plan Comptable</a>
+                            <a href="#" class="btn btn-outline-light btn-lg px-4">Calendrier Fiscal</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 d-none d-lg-block text-center mt-5 mt-lg-0">
+                        <img src="https://images.unsplash.com/photo-1458682625221-3a45f8a844c7" class="img-fluid hero-img rounded" alt="Architecture Marocaine" width="500">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container py-5">
+            <!-- Section Services Vedettes -->
+            <section class="mb-5">
+                <h2 class="section-title mb-4">Services Principaux</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 fade-in">
+                            <div class="card-body text-center">
+                                <div class="feature-icon mx-auto">
+                                    <i class="bi bi-journal-text"></i>
+                                </div>
+                                <h3 class="card-title h5">Plan Comptable Marocain</h3>
+                                <p class="card-text">Accès complet aux 7 classes du plan comptable marocain avec descriptions détaillées et structure.</p>
+                                <a href="#" class="btn btn-outline-primary mt-2">Explorer</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 fade-in">
+                            <div class="card-body text-center">
+                                <div class="feature-icon mx-auto">
+                                    <i class="bi bi-calendar-check"></i>
+                                </div>
+                                <h3 class="card-title h5">Échéances Fiscales</h3>
+                                <p class="card-text">Restez informé de toutes les échéances fiscales importantes pour l'IS, l'IR et la TVA avec des rappels visuels et des informations détaillées.</p>
+                                <a href="#" class="btn btn-outline-primary mt-2">Voir le Calendrier</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 fade-in">
+                            <div class="card-body text-center">
+                                <div class="feature-icon mx-auto">
+                                    <i class="bi bi-file-earmark-text"></i>
+                                </div>
+                                <h3 class="card-title h5">Guide de Procédure de Faillite</h3>
+                                <p class="card-text">Guide étape par étape sur la procédure de dépôt de faillite au Maroc, avec FAQ complète.</p>
+                                <a href="#" class="btn btn-outline-primary mt-2">En Savoir Plus</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Éléments 3D -->
+            <section class="mb-5">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h2 class="section-title">Ressources Comptables Complètes</h2>
+                        <p class="lead">Notre plateforme rassemble les informations essentielles dont ont besoin les professionnels de la comptabilité, les chefs d'entreprise et les étudiants au Maroc.</p>
+                        <p>Accédez à des guides détaillés, des calendriers fiscaux à jour et les dernières actualités financières — tous conçus pour vous aider à naviguer dans le paysage comptable marocain en toute confiance.</p>
+                        <a href="#" class="btn btn-primary mt-3">Explorer les Ressources</a>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <div class="scene">
+                            <div class="cube">
+                                <div class="cube-face cube-face-front">Plan<br>Comptable</div>
+                                <div class="cube-face cube-face-back">TVA</div>
+                                <div class="cube-face cube-face-right">IS</div>
+                                <div class="cube-face cube-face-left">IR</div>
+                                <div class="cube-face cube-face-top">Fiscal</div>
+                                <div class="cube-face cube-face-bottom">Légal</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Dernières Actualités -->
+            <section class="mb-5">
+                <h2 class="section-title mb-4">Dernières Actualités Financières</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card news-card fade-in">
+                            <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a" class="card-img-top" alt="Nouvelle Loi de Finances">
+                            <div class="card-body">
+                                <span class="news-category">Fiscalité</span>
+                                <h3 class="card-title h5">Nouvelle Loi de Finances 2025</h3>
+                                <p class="news-date"><i class="bi bi-calendar"></i> 2025-01-10</p>
+                                <p class="card-text">Le gouvernement marocain adopte la nouvelle loi de finances pour 2025 avec des changements significatifs dans la fiscalité des entreprises.</p>
+                                <a href="#" class="btn btn-sm btn-outline-secondary">Lire Plus</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card news-card fade-in">
+                            <img src="https://images.unsplash.com/photo-1526948531399-320e7e40f0ca" class="card-img-top" alt="Bank Al-Maghrib">
+                            <div class="card-body">
+                                <span class="news-category">Banque</span>
+                                <h3 class="card-title h5">Bank Al-Maghrib: Nouveau Taux Directeur</h3>
+                                <p class="news-date"><i class="bi bi-calendar"></i> 2025-03-15</p>
+                                <p class="card-text">La banque centrale du Maroc ajuste son taux directeur à 3,25% pour maîtriser l'inflation.</p>
+                                <a href="#" class="btn btn-sm btn-outline-secondary">Lire Plus</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card news-card fade-in">
+                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4" class="card-img-top" alt="Digitalisation Comptable">
+                            <div class="card-body">
+                                <span class="news-category">Comptabilité</span>
+                                <h3 class="card-title h5">Digitalisation Comptable: Nouvelles Normes 2025</h3>
+                                <p class="news-date"><i class="bi bi-calendar"></i> 2025-02-20</p>
+                                <p class="card-text">Le Conseil National de la Comptabilité impose de nouvelles normes pour la digitalisation comptable.</p>
+                                <a href="#" class="btn btn-sm btn-outline-secondary">Lire Plus</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="#" class="btn btn-primary">Voir Toutes les Actualités</a>
+                </div>
+            </section>
+
+            <!-- Échéances à Venir -->
+            <section class="mb-5">
+                <h2 class="section-title mb-4">Prochaines Échéances Fiscales</h2>
+                <div class="calendar-container fade-in">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="deadline-item deadline-tva" data-tax-type="TVA">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h3 class="h6 deadline-title">TVA - April Filing</h3>
+                                        <p class="deadline-date mb-1">
+                                            <i class="bi bi-calendar-check"></i> 2025-05-31
+                                        </p>
+                                    </div>
+                                    <span class="badge bg-warning text-dark countdown">43 jours</span>
+                                </div>
+                                <small>Monthly VAT return for April 2025</small>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="deadline-item deadline-is" data-tax-type="IS">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h3 class="h6 deadline-title">IS - Second Installment</h3>
+                                        <p class="deadline-date mb-1">
+                                            <i class="bi bi-calendar-check"></i> 2025-06-30
+                                        </p>
+                                    </div>
+                                    <span class="badge bg-primary countdown">73 jours</span>
+                                </div>
+                                <small>Second quarterly installment payment for corporate tax</small>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="deadline-item deadline-tva" data-tax-type="TVA">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h3 class="h6 deadline-title">TVA - May Filing</h3>
+                                        <p class="deadline-date mb-1">
+                                            <i class="bi bi-calendar-check"></i> 2025-06-30
+                                        </p>
+                                    </div>
+                                    <span class="badge bg-primary countdown">73 jours</span>
+                                </div>
+                                <small>Monthly VAT return for May 2025</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-3">
+                        <a href="#" class="btn btn-outline-primary">Voir le Calendrier Complet</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Appel à l'Action -->
+            <section class="text-center mb-5 py-5 bg-light rounded fade-in">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h2>Besoin d'Informations Comptables Spécifiques?</h2>
+                        <p class="lead">Contactez-nous avec vos questions sur les normes comptables marocaines, les procédures fiscales ou les réglementations financières.</p>
+                        <a href="#" class="btn btn-lg btn-primary mt-3">Nous Contacter</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>Portail Comptable Marocain</h5>
+                    <p class="text-white-50">Votre ressource complète pour les normes comptables marocaines, les échéances fiscales et les informations financières.</p>
+                    <div class="mt-3">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>Navigation</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="footer-link">Accueil</a></li>
+                        <li><a href="#" class="footer-link">Plan Comptable</a></li>
+                        <li><a href="#" class="footer-link">Échéances Fiscales</a></li>
+                        <li><a href="#" class="footer-link">Actualités</a></li>
+                        <li><a href="#" class="footer-link">Ressources</a></li>
+                        <li><a href="#" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+                    <h5>Ressources Utiles</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="footer-link">Conseil National de la Comptabilité</a></li>
+                        <li><a href="#" class="footer-link">Direction Générale des Impôts</a></li>
+                        <li><a href="#" class="footer-link">Office Marocain de la Propriété Intellectuelle</a></li>
+                        <li><a href="#" class="footer-link">Bank Al-Maghrib</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5>Contact</h5>
+                    <address class="text-white-50">
+                        <p><i class="bi bi-geo-alt"></i> Université Ibn Tofail, Kénitra</p>
+                        <p><i class="bi bi-envelope"></i> <a href="mailto:teams.code212@gmail.com" class="footer-link">teams.code212@gmail.com</a></p>
+                        <p><i class="bi bi-telephone"></i> +212 645277163</p>
+                    </address>
+                </div>
+            </div>
+            <hr class="my-4 bg-white-50">
+            <div class="text-center text-white-50">
+                <p>&copy; 2025 Portail Comptable Marocain. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Initialize animations when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            // Add staggered delay to fade in elements
+            fadeElements.forEach((element, index) => {
+                element.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+    </script>
+</body>
+</html>
